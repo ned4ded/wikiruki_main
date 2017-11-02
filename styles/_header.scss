@@ -1,21 +1,102 @@
+
+.header {
+  background-color: white;
+
+  &__nav {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 14px;
+    margin: 9px 0;
+    padding: 14px 17px;
+    color: $h2-95-color;
+
+    &:hover,
+    &:hover:focus {
+      color: $h2-95-color;
+      text-decoration: underline;
+    }
+
+    &:focus {
+      color: $h2-95-color;
+      text-decoration: none;
+    }
+
+    &:active,
+    &:active:focus,
+    &[aria-expanded="true"] {
+      background-color: $main-highlight-color;
+      box-shadow: 0px 5px 15px 0 rgba(0, 0, 0, 0.05);
+      color: $highlight-text-color;
+      text-decoration: none;
+    }
+
+    &[aria-expanded="true"]:hover {
+      color: $highlight-text-color;
+      text-decoration: underline;
+    }
+
+    &:active .caret,
+    &[aria-expanded="true"] .caret {
+      transform: rotate(200grad);
+    }
+  }
+
+  &__menu {
+    margin:0;
+    padding: 0;
+    list-style: none;
+    margin-left: 56px;
+    height: 60px;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+
+    &-item {
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      align-items: center;
+    }
+
+  }
+}
+// Bootstrap
 .mp__header {
-  & .header__btn {
-  	font-size: 14px;
-  	line-height: 14px;
-  	padding: 15px 14px 12px 16px;
+  .dropdown-menu {
+    left: auto;
+    right: 0;
+    border-radius: 0;
+    padding: 27px;
+    padding-right: 30px;
+  }
+
+  .dropdown-menu > li > a {
+    padding: 0;
+    font-weight: 600;
+  }
+
+  .dropdown-menu > li:not(:last-of-type) > a {
+    margin-bottom: 27px;
   }
 }
 
-.header {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  & .menu {
-    display: inline-block;
-    margin: 0;
-    padding: 9px 0 8px;
+
+// Special page styles
+.mp__header {
+
+  & .header__logo {
+    margin-top: 2px;
+    margin-bottom: 1px;
   }
-  & .menu__item {
-    display: inline-block;
+
+  & .mp__btn {
+    align-self: center;
+    margin-left: 47px;
   }
 }

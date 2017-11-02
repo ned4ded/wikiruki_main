@@ -1,0 +1,144 @@
+.dashboard {
+  $border-divider: 1px solid rgba(199, 199, 199, 0.6);
+
+  width: 200px;
+  position: relative;
+
+  &__avatar {
+    border-radius: 50%;
+  }
+
+  &__control {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
+
+    list-style: none;
+
+    &-item {
+      font-size: 0;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: black;
+      margin-right: 20px;
+    }
+
+    & .dashboard__avatar {
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      &:active {
+        transform: scale(0.95)
+      }
+    }
+
+    & .caret {
+      margin-left: 5px;
+    }
+
+    #dashboard-switch:checked ~ & .caret {
+      transform: rotate(200grad);
+    }
+  }
+
+  &__panel {
+    display: block;
+    visibility: hidden;
+    position: absolute;
+    width: 300px;
+    min-height: 260px;
+    right: 0;
+    top: calc(100% + 9px);
+    background-color: $main-background-color;
+    border-radius: 4px;
+    box-shadow: 0px 5px 15px 0 rgba(0, 0, 0, 0.05);
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -18px;
+      right: 28px;
+      // Trinagle
+      border: 10px solid transparent;
+      border-bottom: 10px solid $main-background-color;
+    }
+
+    //panel switcher
+    #dashboard-switch:checked ~ & {
+      visibility: visible;
+    }
+
+
+
+    &-list {
+      margin: 0;
+      padding: 10px 29px;
+
+      list-style: none;
+    }
+
+    &-item {
+      display: block;
+      padding: 8px 0;
+    }
+  }
+
+  &__exit-btn {
+    margin: 0 -29px -10px;
+    padding: 30px 0;
+    padding-left: 56px;
+    border-top: $border-divider;
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: #000;
+      left: 28px;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+    }
+  }
+
+  &__user-info {
+    padding: 20px 30px;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    align-items: center;
+    border-bottom: $border-divider;
+  }
+
+  &__userdata {
+    margin-left: 31px;
+  }
+
+  &__name {
+    font-family: 'Open Sans', serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.33;
+    color: $dashboard-name-color;
+    margin-bottom: 11px;
+  }
+
+  &__email {
+    opacity: 0.7;
+    font-family: 'Open Sans', serif;
+    font-size: 14px;
+    line-height: 1.71;
+    text-align: left;
+    color: $dashboard-email-color;
+  }
+}

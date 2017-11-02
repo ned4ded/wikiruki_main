@@ -44,7 +44,6 @@ gulp.task('main-bower-files', function() {
     return;
 });
 
-// Simple server
 gulp.task('webserver', function() {
   browserSync.init({
     server: './app',
@@ -53,34 +52,21 @@ gulp.task('webserver', function() {
     port: 3002,
     reloadOnRestart: true
   });
-});
 
-// Files transfer tasks
-gulp.task('html', function() {
-  return gulp.src('./*.html');
+  gulp.watch('./styles/*.scss', ['styles']);
+  gulp.watch('./app/*.html').on('change', browserSync.reload);
 });
 
 gulp.task('styles', function() {
-  const plugins = [
-    autoprefixer({browsers: ['last 4 version']}),
-    mqpacker()
-  ];
-  return gulp.src('./styles/*.scss')
+  return gulp.src(__dirname + '/styles/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(rename('custom.css'))
-    .pipe(gulp.dest('app/css'));
-});
-
-gulp.task('live', ['webserver'], function() {
-  //Watcher for index
-  browserSync.reload('./app/*.html', ['html']);
-
-  //Wathcer for styles
-  browserSync.reload('./styles/*.scss', ['styles']);
+    .pipe(gulp.dest('app/css'))
+    .pipe(browserSync.stream());
 });
 
 //Default
-gulp.task('default', ['live']);
+gulp.task('default', ['webserver']);
 
 //Task on first time start
 gulp.task('init', ['main-bower-files', 'styles'])

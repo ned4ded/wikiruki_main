@@ -9,69 +9,219 @@
   <link rel="stylesheet" href="css/custom.css">
 </head>
 <body class="mp">
-
-  <header class="c-landing__header mp__header header navbar-fixed-top container">
-    <a class="logo" href="index.html"><img src="http://via.placeholder.com/255x55" alt="Логотип Wikiruki: символика компании на синем фоне" class="logo header__logo" width="255" height="55" /></a>
-    <ul class="menu">
-      <li><a href="#" class="menu__item menu__item--active">Инструкции</a></li>
-      <li><a href="#" class="menu__item">Избранное</a></li>
-      <li><a href="#" class="menu__item">Мои инструкции</a></li>
-      <li><a href="#" class="c-btn header__btn">Создать инструкцию</a></li>
-    </ul>
+  <header class="header mp__header navbar-fixed-top">
+    <nav class="container">
+      <div class="header__nav">
+        <div>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mp__header-collapse" aria-expanded="false"></button>
+          <a class="logo header__logo" href="index.html"><img src="http://via.placeholder.com/255x55" alt="Логотип Wikiruki: символика компании на синем фоне" width="255" height="55" /></a>
+        </div>
+        <div class="collapse navbar-collapse" id="mp__header-collapse">
+          <ul class="header__menu">
+            <li class="header__menu-item"><a class="header__link" href="#">Инструкции</a></li>
+            <li class="header__menu-item"><a class="header__link" href="#">Избранное</a></li>
+            <li class="header__menu-item dropdown">
+              <a href="#" class="dropdown-toggle header__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Избранное <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Мои инструкции</a></li>
+                <li><a href="#">Мои черновики</a></li>
+              </ul>
+            </li>
+            <li class="header__menu-item"><a href="#" class="mp__btn">Создать инструкцию</a></li>
+            <li class="header__menu-item dashboard header__menu-dashboard">
+              <input id="dashboard-switch" type="checkbox" hidden>
+              <ul class="dashboard__control">
+                <li><a href="#" class="dashboard__control-item dashboard__icon icon-search">Поиск</a></li>
+                <li><a href="#" class="dashboard__control-item dashboard__icon icon-bell" data-notification="true">Оповещения</a></li>
+                <li><a href="#" class="dashboard__control-item dashboard__icon icon-mail" data-message-count="11">Сообщения</a></li>
+                <li><label for="dashboard-switch"><img class="dashboard__avatar" src="http://via.placeholder.com/40x40" alt="Аватар пользователя" data-update="false"></label></li>
+                <span class="caret"></span>
+              </ul>
+              <div class="dashboard__panel">
+                <div class="dashboard__user-info">
+                  <img class="dashboard__avatar" src="http://via.placeholder.com/68x68" alt="Крупный аватар пользователя">
+                  <div class="dashboard__userdata">
+                    <span class="dashboard__name">Антон</span>
+                    <span class="dashboard__email">Anton.al@gmail.com</span>
+                  </div>
+                </div>
+                <ul class="dashboard__panel-list">
+                  <li><a href="#" class="dashboard__panel-item">Диалоги</a></li>
+                  <li><a href="#" class="dashboard__panel-item">Настройки</a></li>
+                  <li><a href="#" class="dashboard__panel-item">Профиль</a></li>
+                  <li><a href="#" class="dashboard__panel-item dashboard__exit-btn dashboard__icon icon-quit">Выйти</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
-  <main class="c-landing__main">
+  <main>
     <div class="bilboard">
       <section class="bilboard-info  container">
-        <h1 class="bilboard-heading">Добропожаловать на <span class="bilboard-heading-bold">WikiRuki</span></h1>
-        <p class="bilboard-p"></p>
+        <h1 class="bilboard-heading row">Добропожаловать на <span class="bilboard-heading-bold">WikiRuki</span></h1>
+        <p class="bilboard-p row">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quam orci, rhoncus vel massa sed, vulputate hendrerit magna. Morbi pellentesque tellus a leo facilisis convallis. Etiam nec vulputate lectus, sit amet molestie libero.</p>
       </section>
     </div>
-    <div class="cons">
-      <section class="cons-info container">
-        <h2 class="mp__heading-2"></h2>
-        <ul class="cons-list">
-          <li class="cons-item">
-            <h3 class="cons-heading"></h3>
-            <p></p>
+    <div class="mp__cons">
+      <section class="mp__cons-info container">
+        <h2 class="mp__heading-2 row">Ваши преимущества и выгода</h2>
+        <ul class="mp__cons-list row">
+          <li class="mp__cons-item col-md-3 col-sm-6 cols-xs-1">
+            <h3 class="mp__cons-heading">Повышайте навыки</h3>
+            <p>Перенимайте практический опыт наших мастеров</p>
           </li>
-          <li class="cons-item">
-            <h3 class="cons-heading"></h3>
-            <p></p>
+          <li class="mp__cons-item col-md-3 col-sm-6 cols-xs-1">
+            <h3 class="mp__cons-heading">Делитесь опытом</h3>
+            <p>Cтаньте для других мастером в любом деле</p>
           </li>
-          <li class="cons-item">
-            <h3 class="cons-heading"></h3>
-            <p></p>
+          <li class="mp__cons-item col-md-3 col-sm-6 cols-xs-1">
+            <h3 class="mp__cons-heading">Получайте доход</h3>
+            <p>Превращайте опыт в деньги публикацией инструкций</p>
           </li>
-          <li class="cons-item">
-            <h3 class="cons-heading"></h3>
-            <p></p>
+          <li class="mp__cons-item col-md-3 col-sm-6 cols-xs-1">
+            <h3 class="mp__cons-heading">Развивайте хобби</h3>
+            <p>Превратите любое хобби в источник своего дохода</p>
           </li>
         </ul>
-        <a href="#" class="c-btn">Стать мастером</a>
-      </section>
-      <section class="category container">
-        <h2>Категории инструкций</h2>
-        <ul class="category-list">
-          <li class="category-item"></li>
-          <li class="category-item"></li>
-          <li class="category-item"></li>
-          <li class="category-item"></li>
-          <li class="category-item"></li>
-          <li class="category-item"></li>
-          <li class="category-item"></li>
-          <li class="category-item"></li>
-          <li class="category-item"></li>
-          <li class="category-item"></li>
-          <li class="category-item"></li>
-          <li class="category-item"></li>
-        </ul>
+        <div class="mp__cons-btn-container row">
+          <a href="#" class="mp__btn">Стать мастером</a>
+        </div>
       </section>
     </div>
-  </main>
-  <footer class="c-landing__footer">
+    <section class="mp__category container">
+      <h2 class="mp__heading-2 mp__category__heading row">Категории инструкций</h2>
+      <ul class="mp__category-list row">
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <a href="#" class="mp__category-item"></a>
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <a href="#" class="mp__category-item"></a>
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <a href="#" class="mp__category-item"></a>
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <a href="#" class="mp__category-item"></a>
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <a href="#" class="mp__category-item"></a>
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <a href="#" class="mp__category-item"></a>
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <a href="#" class="mp__category-item"></a>
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <a href="#" class="mp__category-item"></a>
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <a href="#" class="mp__category-item"></a>
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <a href="#" class="mp__category-item"></a>
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <a href="#" class="mp__category-item"></a>
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <a href="#" class="mp__category-item"></a>
+        </li>
+      </ul>
+    </section>
+    <section class="popular-instr container">
+      <h2 class="mp__heading-2 popular-instr__heading row">Популярные инструкции</h2>
+      <ul class="popular-instr__list row">
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <div class="popular-instr__item">
 
+          </div>
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <div class="popular-instr__item">
+
+          </div>
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <div class="popular-instr__item">
+
+          </div>
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <div class="popular-instr__item">
+
+          </div>
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <div class="popular-instr__item">
+
+          </div>
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <div class="popular-instr__item">
+
+          </div>
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <div class="popular-instr__item">
+
+          </div>
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <div class="popular-instr__item">
+
+          </div>
+        </li>
+      </ul>
+      <div class="popular-instr__btn-container">
+        <a href="#" class="mp__btn">Смотреть еще</a>
+      </div>
+    </section>
+  </main>
+  <footer class="mp__footer">
+    <div class="container">
+      <div class="row">
+        <div class="mp__footer-search col-sm-3 col-xs-12">
+          <a class="logo" href="index.html"><img src="http://via.placeholder.com/255x55" alt="Логотип Wikiruki: символика компании на синем фоне" class="logo header__logo" width="255" height="55" /></a>
+          <div class="mp__footer-search-input"></div>
+        </div>
+        <div class="mp__footer-links col-sm-5 col-sm-offset-4 col-xs-12">
+          <div class="row">
+            <ul class="social__list col-sm-3 col-xs-12">
+              <h3 class="social-heading">About Us</h3>
+              <li class="social__item">Who We Are</li>
+              <li class="social__item">Advertise</li>
+              <li class="social__item">Contact</li>
+              <li class="social__item">Jobs</li>
+              <li class="social__item">Help</li>
+            </ul>
+            <ul class="social__list col-sm-4 col-xs-12">
+              <h3 class="social-heading">Find Us</h3>
+              <li class="social__item">Facebook</li>
+              <li class="social__item">Youtube</li>
+              <li class="social__item">Twetter</li>
+              <li class="social__item">Pinterest</li>
+              <li class="social__item">Google+</li>
+            </ul>
+            <ul class="social__list col-sm-5 col-xs-12">
+              <h3 class="social-heading">Resources</h3>
+              <li class="social__item">Пользовательское соглашение</li>
+              <li class="social__item">Авторские права</li>
+              <li class="social__item">Residency Program</li>
+              <li class="social__item">Gift Premium Account</li>
+              <li class="social__item">Forums</li>
+              <li class="social__item">Answers</li>
+              <li class="social__item">Sitemap</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
-  <script src="js/bootstrap.min.js">></script>
-  <script src="js/jquery.min.js">></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
