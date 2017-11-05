@@ -1,0 +1,76 @@
+@import 'variables';
+
+.bilboard {
+  min-height: 520px;
+  background: grey transparent;
+  position: relative;
+
+  &__slider {
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+
+    &-dots {
+      position: absolute;
+      left: 50%;
+      transform: translatex(-50%);
+      bottom: 0;
+      margin: 0;
+      margin-bottom: 29px;
+      display: flex;
+
+      & > li > button {
+        font-size: 0;
+        display: block;
+        width: 70px;
+        height: 2px;
+        opacity: 0.6;
+        background-color:$main-background-color;
+        margin: 0;
+        border: none;
+      }
+
+      & > li:not(last-of-type) {
+      margin-right: 5px;
+      }
+
+    }
+  }
+
+  &__info {
+    padding-top: 178px;
+
+    &-heading {
+      font-size: 24px;
+      font-family: 'Open Sans', serif;
+      font-weight: 600;
+      line-height: 1;
+      text-align: left;
+      color: $main-background-color;
+      width: 612px;
+      margin: 0;
+
+      &-big {
+        font-size: 140px;
+      }
+    }
+
+    &-p {
+      // marked up as is in psd template: height is equial to 2 lines (~54px)
+      font-family: 'Open Sans', serif;
+      font-size: 18px;
+      line-height: 1.5;
+      text-align: left;
+      color: $main-background-color;
+      width: 415px;
+      hyphen: auto;
+      // max height with not ruining slider's usability is 108px (4 rows) on max viewport
+      max-height: 54px;
+      overflow: hidden;
+      margin: 0;
+      margin-top: 8px;
+    }
+  }
+}

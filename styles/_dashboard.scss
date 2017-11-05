@@ -1,6 +1,6 @@
-.dashboard {
-  $border-divider: 1px solid rgba(199, 199, 199, 0.6);
+$border-divider: 1px solid rgba(199, 199, 199, 0.6);
 
+.dashboard {
   width: 200px;
   position: relative;
 
@@ -27,20 +27,27 @@
       margin-right: 20px;
     }
 
-    & .dashboard__avatar {
-      cursor: pointer;
+    & label[for="dashboard-switch"] {
+      position: relative;
 
-      &:hover {
-        transform: scale(1.05);
+      & .caret {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        right: -15px;
       }
 
-      &:active {
-        transform: scale(0.95)
-      }
-    }
+      & .dashboard__avatar {
+        cursor: pointer;
 
-    & .caret {
-      margin-left: 5px;
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        &:active {
+          transform: scale(0.95)
+        }
+      }
     }
 
     #dashboard-switch:checked ~ & .caret {
@@ -76,8 +83,6 @@
       visibility: visible;
     }
 
-
-
     &-list {
       margin: 0;
       padding: 10px 29px;
@@ -88,26 +93,39 @@
     &-item {
       display: block;
       padding: 8px 0;
+      margin: 0;
+
+      // reassigning header__link property
+      &:active,
+      &:active:focus, {
+        background-color: transparent;
+        color: $main-highlight-color;
+        box-shadow: none;
+      }
     }
-  }
 
-  &__exit-btn {
-    margin: 0 -29px -10px;
-    padding: 30px 0;
-    padding-left: 56px;
-    border-top: $border-divider;
-    position: relative;
+    &-exit {
+      margin: 10px -29px -10px;
+      padding: 30px 0;
+      padding-left: 28px;
+      border-top: $border-divider;
+      position: relative;
 
-    &:after {
-      content: '';
-      display: block;
-      width: 20px;
-      height: 20px;
-      background: #000;
-      left: 28px;
-      top: 50%;
-      transform: translateY(-50%);
-      position: absolute;
+      & .dashboard__panel-item {
+        padding-left: 28px;
+
+        &:after {
+          content: '';
+          display: block;
+          width: 20px;
+          height: 20px;
+          background: #000;
+          left: 28px;
+          top: 50%;
+          transform: translateY(-50%);
+          position: absolute;
+        }
+      }
     }
   }
 
@@ -140,5 +158,110 @@
     line-height: 1.71;
     text-align: left;
     color: $dashboard-email-color;
+  }
+}
+
+@media (max-width: 1199px) {
+  .header__menu-dashboard {
+    order: -1;
+    width: 100%;
+    padding: 0 15px;
+    border-bottom: $border-divider;
+
+    .dashboard {
+      &__control {
+        position: absolute;
+        padding: 0;
+        display: block;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 15px;
+
+        li {
+          margin-bottom: 5px;
+        }
+
+        li [for="dashboard-switch"] {
+          display: none;
+        }
+
+        &-item {
+          margin: 0;
+        }
+      }
+
+      &__user-info {
+        padding: 10px;
+        padding-left: 30px;
+        border: none;
+        width: 250px;
+
+        & .dashboard__avatar {
+          flex-shrink: 0;
+        }
+      }
+
+      &__userdata {
+        margin-left: 10px;
+      }
+
+      &__panel {
+        position: static;
+        visibility: visible;
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        min-height: auto;
+        box-shadow: none;
+        width: 100%;
+
+        &:after {
+          display: none;
+        }
+
+        &-list {
+          display: inline-flex;
+          padding: 0;
+
+          & li {
+            display: flex;
+            align-items: center;
+            padding: 0 10px;;
+          }
+        }
+
+        &-exit {
+          padding: 0;
+          padding-left: 28px;
+          margin: 0;
+          border: none;
+          position: relative;
+
+          .dashboard__panel-item {
+            margin-left: -5px;
+            border-left: $border-divider;
+            &:after {
+              left: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .header .mp__btn {
+      margin-top: 2px;
+  }
+
+  .dashboard__userdata {
+    display: none;
+  }
+
+  .dashboard__panel-exit .header__link  {
+    font-size: 0;
   }
 }

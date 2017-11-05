@@ -6,14 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Wikiruki: Main Page</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/slick.min.css">
   <link rel="stylesheet" href="css/custom.css">
 </head>
 <body class="mp">
   <header class="header mp__header navbar-fixed-top">
     <nav class="container">
       <div class="header__nav">
-        <div>
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mp__header-collapse" aria-expanded="false"></button>
+        <div class="header__nav-toggle">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mp__header-collapse" aria-expanded="false">
+          </button>
           <a class="logo header__logo" href="index.html"><img src="http://via.placeholder.com/255x55" alt="Логотип Wikiruki: символика компании на синем фоне" width="255" height="55" /></a>
         </div>
         <div class="collapse navbar-collapse" id="mp__header-collapse">
@@ -21,7 +23,7 @@
             <li class="header__menu-item"><a class="header__link" href="#">Инструкции</a></li>
             <li class="header__menu-item"><a class="header__link" href="#">Избранное</a></li>
             <li class="header__menu-item dropdown">
-              <a href="#" class="dropdown-toggle header__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Избранное <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle header__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Мои инструкции <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Мои инструкции</a></li>
                 <li><a href="#">Мои черновики</a></li>
@@ -34,8 +36,7 @@
                 <li><a href="#" class="dashboard__control-item dashboard__icon icon-search">Поиск</a></li>
                 <li><a href="#" class="dashboard__control-item dashboard__icon icon-bell" data-notification="true">Оповещения</a></li>
                 <li><a href="#" class="dashboard__control-item dashboard__icon icon-mail" data-message-count="11">Сообщения</a></li>
-                <li><label for="dashboard-switch"><img class="dashboard__avatar" src="http://via.placeholder.com/40x40" alt="Аватар пользователя" data-update="false"></label></li>
-                <span class="caret"></span>
+                <li><label for="dashboard-switch"><img class="dashboard__avatar" src="http://via.placeholder.com/40x40" alt="Аватар пользователя" data-update="false"><span class="caret"></span></label></li>
               </ul>
               <div class="dashboard__panel">
                 <div class="dashboard__user-info">
@@ -46,10 +47,10 @@
                   </div>
                 </div>
                 <ul class="dashboard__panel-list">
-                  <li><a href="#" class="dashboard__panel-item">Диалоги</a></li>
-                  <li><a href="#" class="dashboard__panel-item">Настройки</a></li>
-                  <li><a href="#" class="dashboard__panel-item">Профиль</a></li>
-                  <li><a href="#" class="dashboard__panel-item dashboard__exit-btn dashboard__icon icon-quit">Выйти</a></li>
+                  <li><a href="#" class="header__link dashboard__panel-item">Диалоги</a></li>
+                  <li><a href="#" class="header__link dashboard__panel-item">Настройки</a></li>
+                  <li><a href="#" class="header__link dashboard__panel-item">Профиль</a></li>
+                  <li class="dashboard__panel-exit"><a href="#" class="header__link dashboard__panel-item dashboard__icon icon-quit">Выйти</a></li>
                 </ul>
               </div>
             </li>
@@ -60,119 +61,469 @@
   </header>
   <main>
     <div class="bilboard">
-      <section class="bilboard-info  container">
-        <h1 class="bilboard-heading row">Добропожаловать на <span class="bilboard-heading-bold">WikiRuki</span></h1>
-        <p class="bilboard-p row">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quam orci, rhoncus vel massa sed, vulputate hendrerit magna. Morbi pellentesque tellus a leo facilisis convallis. Etiam nec vulputate lectus, sit amet molestie libero.</p>
+      <div class="bilboard__slider">
+        <div class="bilboard__slider-item">
+          <img src="img/slider-background-office.jpg" alt="#" class="bilboard__slider-item" width="1920" height="520">
+        </div>
+        <div class="bilboard__slider-item">
+          <img src="https://picsum.photos/1920/520/?image=99" alt="#" class="bilboard__slider-item" width="1920" height="520">
+        </div>
+        <div class="bilboard__slider-item">
+          <img src="https://picsum.photos/1920/520/?image=200" alt="#" class="bilboard__slider-item" width="1920" height="520">
+        </div>
+        <div class="bilboard__slider-item">
+          <img src="https://picsum.photos/1920/520/?image=202" alt="#" class="bilboard__slider-item" width="1920" height="520">
+        </div>
+      </div>
+      <section class="bilboard__info  container">
+        <h1 class="bilboard__info-heading">Добропожаловать на <span class="bilboard__info-heading-big">WikiRuki</span></h1>
+        <p class="bilboard__info-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quam orci, rhoncus vel massa sed, vulputate hendrerit magna. Morbi pellentesque tellus a leo facilisis convallis. Etiam nec vulputate lectus, sit amet molestie libero.</p>
       </section>
     </div>
     <div class="mp__cons">
       <section class="mp__cons-info container">
-        <h2 class="mp__heading-2 row">Ваши преимущества и выгода</h2>
+        <h2 class="mp__heading-2 mp__cons-heading">Ваши преимущества и выгода</h2>
         <ul class="mp__cons-list row">
-          <li class="mp__cons-item col-md-3 col-sm-6 cols-xs-1">
-            <h3 class="mp__cons-heading">Повышайте навыки</h3>
-            <p>Перенимайте практический опыт наших мастеров</p>
+          <li class="mp__cons-item col-lg-3 col-sm-6 col-xs-12">
+            <h3 class="mp__cons-item-heading">Повышайте навыки</h3>
+            <p class="mp__cons-item-p">Перенимайте практический опыт наших мастеров</p>
           </li>
-          <li class="mp__cons-item col-md-3 col-sm-6 cols-xs-1">
-            <h3 class="mp__cons-heading">Делитесь опытом</h3>
-            <p>Cтаньте для других мастером в любом деле</p>
+          <li class="mp__cons-item col-lg-3 col-sm-6 col-xs-12">
+            <h3 class="mp__cons-item-heading">Делитесь опытом</h3>
+            <p class="mp__cons-item-p">Cтаньте для других мастером в любом деле</p>
           </li>
-          <li class="mp__cons-item col-md-3 col-sm-6 cols-xs-1">
-            <h3 class="mp__cons-heading">Получайте доход</h3>
-            <p>Превращайте опыт в деньги публикацией инструкций</p>
+          <li class="mp__cons-item col-lg-3 col-sm-6 col-xs-12">
+            <h3 class="mp__cons-item-heading">Получайте доход</h3>
+            <p class="mp__cons-item-p">Превращайте опыт в деньги публикацией инструкций</p>
           </li>
-          <li class="mp__cons-item col-md-3 col-sm-6 cols-xs-1">
-            <h3 class="mp__cons-heading">Развивайте хобби</h3>
-            <p>Превратите любое хобби в источник своего дохода</p>
+          <li class="mp__cons-item col-lg-3 col-sm-6 col-xs-12">
+            <h3 class="mp__cons-item-heading">Развивайте хобби</h3>
+            <p class="mp__cons-item-p">Превратите любое хобби в источник своего дохода</p>
           </li>
         </ul>
-        <div class="mp__cons-btn-container row">
+        <div class="mp__cons-btn-container">
           <a href="#" class="mp__btn">Стать мастером</a>
         </div>
       </section>
     </div>
-    <section class="mp__category container">
-      <h2 class="mp__heading-2 mp__category__heading row">Категории инструкций</h2>
-      <ul class="mp__category-list row">
+    <section class="mp__category category container">
+      <h2 class="mp__heading-2 category__heading">Категории инструкций</h2>
+      <ul class="category__list row">
         <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <a href="#" class="mp__category-item"></a>
+          <div class="category__item">
+            <a href="#" class="category__link">
+              <span class="category__name">Красота</span>
+              <span class="category__discr">Красота и спорт</span>
+              <div class="category__background category__background--sport"></div>
+            </a>
+          </div>
         </li>
         <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <a href="#" class="mp__category-item"></a>
+          <div class="category__item">
+            <a href="#" class="category__link">
+              <span class="category__name">Ботаника</span>
+              <span class="category__discr">Сад, огород, дача, строительство и ремонт</span>
+              <div class="category__background category__background--garden"></div>
+            </a>
+          </div>
         </li>
         <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <a href="#" class="mp__category-item"></a>
+          <div class="category__item">
+            <a href="#" class="category__link">
+              <span class="category__name">Охота</span>
+              <span class="category__discr">Охота, рыбалка</span>
+              <div class="category__background category__background--hunting"></div>
+            </a>
+          </div>
         </li>
         <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <a href="#" class="mp__category-item"></a>
+          <div class="category__item">
+            <a href="#" class="category__link">
+              <span class="category__name">Кулинария</span>
+              <span class="category__discr">Еда и напитки</span>
+              <div class="category__background category__background--cooking"></div>
+            </a>
+          </div>
         </li>
         <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <a href="#" class="mp__category-item"></a>
+          <div class="category__item">
+            <a href="#" class="category__link">
+              <span class="category__name">Дизайн</span>
+              <span class="category__discr">Интерьер, аксессуары</span>
+              <div class="category__background category__background--design"></div>
+            </a>
+          </div>
         </li>
         <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <a href="#" class="mp__category-item"></a>
+          <div class="category__item">
+            <a href="#" class="category__link">
+              <span class="category__name">Подарки</span>
+              <span class="category__discr">Рукоделие и хобби</span>
+              <div class="category__background category__background--hobby"></div>
+            </a>
+          </div>
         </li>
         <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <a href="#" class="mp__category-item"></a>
+          <div class="category__item">
+            <a href="#" class="category__link">
+              <span class="category__name">Мастерская</span>
+              <span class="category__discr">Мастерская, самоделкины</span>
+              <div class="category__background category__background--workshop"></div>
+            </a>
+          </div>
         </li>
         <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <a href="#" class="mp__category-item"></a>
+          <div class="category__item">
+            <a href="#" class="category__link">
+              <span class="category__name">Наука</span>
+              <span class="category__discr">Наука и технологии, программирование.</span>
+              <div class="category__background category__background--science"></div>
+            </a>
+          </div>
         </li>
         <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <a href="#" class="mp__category-item"></a>
+          <div class="category__item">
+            <a href="#" class="category__link">
+              <span class="category__name">Авто</span>
+              <span class="category__discr">Авто и другие ТС, гараж</span>
+              <div class="category__background category__background--auto"></div>
+            </a>
+          </div>
         </li>
         <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <a href="#" class="mp__category-item"></a>
+          <div class="category__item">
+            <a href="#" class="category__link">
+              <span class="category__name">Искусство</span>
+              <span class="category__discr">Искусство, фотография</span>
+              <div class="category__background category__background--art"></div>
+            </a>
+          </div>
         </li>
         <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <a href="#" class="mp__category-item"></a>
+          <div class="category__item">
+            <a href="#" class="category__link">
+              <span class="category__name">Учёба</span>
+              <span class="category__discr">Учёба и образование, бизнес</span>
+              <div class="category__background category__background--study"></div>
+            </a>
+          </div>
         </li>
         <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <a href="#" class="mp__category-item"></a>
+          <div class="category__item">
+            <a href="#" class="category__link">
+              <span class="category__name">Здоровье</span>
+              <span class="category__discr">Здоровье и медицина</span>
+              <div class="category__background category__background--health"></div>
+            </a>
+          </div>
         </li>
       </ul>
     </section>
     <section class="popular-instr container">
-      <h2 class="mp__heading-2 popular-instr__heading row">Популярные инструкции</h2>
+      <h2 class="mp__heading-2 popular-instr__heading">Популярные инструкции</h2>
       <ul class="popular-instr__list row">
         <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div class="popular-instr__item">
-
+            <div class="instruction main-info__instruction">
+              <img class="instruction__image" src="img/instrucntion-card-laptop.jpg" alt="Изображение рецепта" width="350" height="200">
+              <h3 class="instruction__heading">Основы техники 3D печати</h3>
+              <span class="instruction__author">Александр Чуев</span>
+              <span class="instruction__date">Juli 31, 2017</span>
+              <p class="instruction__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec auctor metus. Cras at mauris libero...</p>
+              <div class="instruction__categories">
+                <h4 class="category-list__heading">Категории:</h4>
+                <ul class="category-list instruction__category-list">
+                  <li class="category-list__name">Печать</li>
+                  <li class="category-list__name">Принтер</li>
+                  <li class="category-list__name">3D</li>
+                  <li class="category-list__name">Техника</li>
+                </ul>
+              </div>
+              <table class="instruction__social instruction__separate-line">
+                <thead class="hidden">
+                  <tr>
+                    <th>Лайк</th>
+                    <th>Дизлайк</th>
+                    <th>Комментарии</th>
+                    <th>Просмотры</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="c-landing-icon-sm c-landing-icon-like instruction__icon">127</td>
+                    <td class="c-landing-icon-sm c-landing-icon-dislike instruction__icon">0</td>
+                    <td class="c-landing-icon-sm c-landing-icon-comment instruction__icon">12</td>
+                    <td class="c-landing-icon-sm c-landing-icon-visibility instruction__icon pull-right">1124</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </li>
         <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div class="popular-instr__item">
-
+            <div class="instruction main-info__instruction">
+              <img class="instruction__image" src="img/instrucntion-card-laptop.jpg" alt="Изображение рецепта" width="350" height="200">
+              <h3 class="instruction__heading">Основы техники 3D печати</h3>
+              <span class="instruction__author">Александр Чуев</span>
+              <span class="instruction__date">Juli 31, 2017</span>
+              <p class="instruction__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec auctor metus. Cras at mauris libero...</p>
+              <div class="instruction__categories">
+                <h4 class="category-list__heading">Категории:</h4>
+                <ul class="category-list instruction__category-list">
+                  <li class="category-list__name">Печать</li>
+                  <li class="category-list__name">Принтер</li>
+                  <li class="category-list__name">3D</li>
+                  <li class="category-list__name">Техника</li>
+                </ul>
+              </div>
+              <table class="instruction__social instruction__separate-line">
+                <thead class="hidden">
+                  <tr>
+                    <th>Лайк</th>
+                    <th>Дизлайк</th>
+                    <th>Комментарии</th>
+                    <th>Просмотры</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="c-landing-icon-sm c-landing-icon-like instruction__icon">127</td>
+                    <td class="c-landing-icon-sm c-landing-icon-dislike instruction__icon">0</td>
+                    <td class="c-landing-icon-sm c-landing-icon-comment instruction__icon">12</td>
+                    <td class="c-landing-icon-sm c-landing-icon-visibility instruction__icon pull-right">1124</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </li>
         <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div class="popular-instr__item">
-
+            <div class="instruction main-info__instruction">
+              <img class="instruction__image" src="img/instrucntion-card-laptop.jpg" alt="Изображение рецепта" width="350" height="200">
+              <h3 class="instruction__heading">Основы техники 3D печати</h3>
+              <span class="instruction__author">Александр Чуев</span>
+              <span class="instruction__date">Juli 31, 2017</span>
+              <p class="instruction__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec auctor metus. Cras at mauris libero...</p>
+              <div class="instruction__categories">
+                <h4 class="category-list__heading">Категории:</h4>
+                <ul class="category-list instruction__category-list">
+                  <li class="category-list__name">Печать</li>
+                  <li class="category-list__name">Принтер</li>
+                  <li class="category-list__name">3D</li>
+                  <li class="category-list__name">Техника</li>
+                </ul>
+              </div>
+              <table class="instruction__social instruction__separate-line">
+                <thead class="hidden">
+                  <tr>
+                    <th>Лайк</th>
+                    <th>Дизлайк</th>
+                    <th>Комментарии</th>
+                    <th>Просмотры</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="c-landing-icon-sm c-landing-icon-like instruction__icon">127</td>
+                    <td class="c-landing-icon-sm c-landing-icon-dislike instruction__icon">0</td>
+                    <td class="c-landing-icon-sm c-landing-icon-comment instruction__icon">12</td>
+                    <td class="c-landing-icon-sm c-landing-icon-visibility instruction__icon pull-right">1124</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </li>
         <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div class="popular-instr__item">
-
+            <div class="instruction main-info__instruction">
+              <img class="instruction__image" src="img/instrucntion-card-laptop.jpg" alt="Изображение рецепта" width="350" height="200">
+              <h3 class="instruction__heading">Основы техники 3D печати</h3>
+              <span class="instruction__author">Александр Чуев</span>
+              <span class="instruction__date">Juli 31, 2017</span>
+              <p class="instruction__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec auctor metus. Cras at mauris libero...</p>
+              <div class="instruction__categories">
+                <h4 class="category-list__heading">Категории:</h4>
+                <ul class="category-list instruction__category-list">
+                  <li class="category-list__name">Печать</li>
+                  <li class="category-list__name">Принтер</li>
+                  <li class="category-list__name">3D</li>
+                  <li class="category-list__name">Техника</li>
+                </ul>
+              </div>
+              <table class="instruction__social instruction__separate-line">
+                <thead class="hidden">
+                  <tr>
+                    <th>Лайк</th>
+                    <th>Дизлайк</th>
+                    <th>Комментарии</th>
+                    <th>Просмотры</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="c-landing-icon-sm c-landing-icon-like instruction__icon">127</td>
+                    <td class="c-landing-icon-sm c-landing-icon-dislike instruction__icon">0</td>
+                    <td class="c-landing-icon-sm c-landing-icon-comment instruction__icon">12</td>
+                    <td class="c-landing-icon-sm c-landing-icon-visibility instruction__icon pull-right">1124</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </li>
         <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div class="popular-instr__item">
-
+            <div class="instruction main-info__instruction">
+              <img class="instruction__image" src="img/instrucntion-card-laptop.jpg" alt="Изображение рецепта" width="350" height="200">
+              <h3 class="instruction__heading">Основы техники 3D печати</h3>
+              <span class="instruction__author">Александр Чуев</span>
+              <span class="instruction__date">Juli 31, 2017</span>
+              <p class="instruction__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec auctor metus. Cras at mauris libero...</p>
+              <div class="instruction__categories">
+                <h4 class="category-list__heading">Категории:</h4>
+                <ul class="category-list instruction__category-list">
+                  <li class="category-list__name">Печать</li>
+                  <li class="category-list__name">Принтер</li>
+                  <li class="category-list__name">3D</li>
+                  <li class="category-list__name">Техника</li>
+                </ul>
+              </div>
+              <table class="instruction__social instruction__separate-line">
+                <thead class="hidden">
+                  <tr>
+                    <th>Лайк</th>
+                    <th>Дизлайк</th>
+                    <th>Комментарии</th>
+                    <th>Просмотры</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="c-landing-icon-sm c-landing-icon-like instruction__icon">127</td>
+                    <td class="c-landing-icon-sm c-landing-icon-dislike instruction__icon">0</td>
+                    <td class="c-landing-icon-sm c-landing-icon-comment instruction__icon">12</td>
+                    <td class="c-landing-icon-sm c-landing-icon-visibility instruction__icon pull-right">1124</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </li>
         <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div class="popular-instr__item">
-
+            <div class="instruction main-info__instruction">
+              <img class="instruction__image" src="img/instrucntion-card-laptop.jpg" alt="Изображение рецепта" width="350" height="200">
+              <h3 class="instruction__heading">Основы техники 3D печати</h3>
+              <span class="instruction__author">Александр Чуев</span>
+              <span class="instruction__date">Juli 31, 2017</span>
+              <p class="instruction__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec auctor metus. Cras at mauris libero...</p>
+              <div class="instruction__categories">
+                <h4 class="category-list__heading">Категории:</h4>
+                <ul class="category-list instruction__category-list">
+                  <li class="category-list__name">Печать</li>
+                  <li class="category-list__name">Принтер</li>
+                  <li class="category-list__name">3D</li>
+                  <li class="category-list__name">Техника</li>
+                </ul>
+              </div>
+              <table class="instruction__social instruction__separate-line">
+                <thead class="hidden">
+                  <tr>
+                    <th>Лайк</th>
+                    <th>Дизлайк</th>
+                    <th>Комментарии</th>
+                    <th>Просмотры</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="c-landing-icon-sm c-landing-icon-like instruction__icon">127</td>
+                    <td class="c-landing-icon-sm c-landing-icon-dislike instruction__icon">0</td>
+                    <td class="c-landing-icon-sm c-landing-icon-comment instruction__icon">12</td>
+                    <td class="c-landing-icon-sm c-landing-icon-visibility instruction__icon pull-right">1124</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </li>
         <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div class="popular-instr__item">
-
+            <div class="instruction main-info__instruction">
+              <img class="instruction__image" src="img/instrucntion-card-laptop.jpg" alt="Изображение рецепта" width="350" height="200">
+              <h3 class="instruction__heading">Основы техники 3D печати</h3>
+              <span class="instruction__author">Александр Чуев</span>
+              <span class="instruction__date">Juli 31, 2017</span>
+              <p class="instruction__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec auctor metus. Cras at mauris libero...</p>
+              <div class="instruction__categories">
+                <h4 class="category-list__heading">Категории:</h4>
+                <ul class="category-list instruction__category-list">
+                  <li class="category-list__name">Печать</li>
+                  <li class="category-list__name">Принтер</li>
+                  <li class="category-list__name">3D</li>
+                  <li class="category-list__name">Техника</li>
+                </ul>
+              </div>
+              <table class="instruction__social instruction__separate-line">
+                <thead class="hidden">
+                  <tr>
+                    <th>Лайк</th>
+                    <th>Дизлайк</th>
+                    <th>Комментарии</th>
+                    <th>Просмотры</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="c-landing-icon-sm c-landing-icon-like instruction__icon">127</td>
+                    <td class="c-landing-icon-sm c-landing-icon-dislike instruction__icon">0</td>
+                    <td class="c-landing-icon-sm c-landing-icon-comment instruction__icon">12</td>
+                    <td class="c-landing-icon-sm c-landing-icon-visibility instruction__icon pull-right">1124</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </li>
         <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div class="popular-instr__item">
-
+            <div class="instruction main-info__instruction">
+              <img class="instruction__image" src="img/instrucntion-card-laptop.jpg" alt="Изображение рецепта" width="350" height="200">
+              <h3 class="instruction__heading">Основы техники 3D печати</h3>
+              <span class="instruction__author">Александр Чуев</span>
+              <span class="instruction__date">Juli 31, 2017</span>
+              <p class="instruction__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec auctor metus. Cras at mauris libero...</p>
+              <div class="instruction__categories">
+                <h4 class="category-list__heading">Категории:</h4>
+                <ul class="category-list instruction__category-list">
+                  <li class="category-list__name">Печать</li>
+                  <li class="category-list__name">Принтер</li>
+                  <li class="category-list__name">3D</li>
+                  <li class="category-list__name">Техника</li>
+                </ul>
+              </div>
+              <table class="instruction__social instruction__separate-line">
+                <thead class="hidden">
+                  <tr>
+                    <th>Лайк</th>
+                    <th>Дизлайк</th>
+                    <th>Комментарии</th>
+                    <th>Просмотры</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="c-landing-icon-sm c-landing-icon-like instruction__icon">127</td>
+                    <td class="c-landing-icon-sm c-landing-icon-dislike instruction__icon">0</td>
+                    <td class="c-landing-icon-sm c-landing-icon-comment instruction__icon">12</td>
+                    <td class="c-landing-icon-sm c-landing-icon-visibility instruction__icon pull-right">1124</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </li>
       </ul>
@@ -223,5 +574,7 @@
   </footer>
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/slick.min.js"></script>
+  <script src="js/custom.js"></script>
 </body>
 </html>

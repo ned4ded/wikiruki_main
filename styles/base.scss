@@ -1,7 +1,4 @@
-@import 'landing';
 @import 'variables';
-@import 'header';
-@import 'dashboard';
 
 .logo {
   display: inline-block;
@@ -52,7 +49,7 @@
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1199px) {
     .navbar-header {
         float: none;
     }
@@ -100,87 +97,26 @@
     }
 }
 
+.mp__heading-2 {
+  font-size: 36px;
+  font-family: 'Open Sans', serif;
+  line-height: 1;
+  text-align: center;
+  color: $h2-color;
+  margin: 0;
+  padding-bottom: 23px;
+  position: relative;
 
-// @media (max-width: 992px) {
-//   .mp__header {
-//     &-menu {
-//       list-style: none;
-//       display: -webkit-flex;
-//       display: -ms-flex;
-//       display: flex;
-//       align-items: stretch;
-//     };
-//
-//     & .mp__btn {
-//       align-self: center;
-//     }
-//   }
-// }
-
-.bilboard {
-  padding-top: 60px;
-  min-height: 460px;
-  background-color: grey;
-}
-
-.mp__cons {
-  background-color: lightgrey;
-  padding-top: 84px;
-  padding-bottom: 69px;
-  &-list {
-    padding: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  &-btn-container {
-    text-align: center;
-  }
-}
-
-.mp__category {
-  padding-top: 73px;
-  padding-bottom: 55px;
-  &-list {
-    // display: -webkit-flex;
-    // display: -ms-flex;
-    // display: flex;
-    // flex-flow: row wrap;
-    // justify-content: space-between;
-    // align-items: center;
-    min-height: 560px;
-    margin: 0 -30px;
-    padding: 0;
-
-    list-style: none;
-  };
-  &-item {
+  &:after {
+    content: '';
     display: block;
-    max-width: 270px;
-    width: 100%;
-    min-height: 160px;
-    background-color: dimgrey;
-    margin: 0 auto 30px;
-  }
-}
-
-.popular-instr {
-  padding-bottom: 135px;
-  &__list {
-    margin: 0 -30px 39px;
-    padding: 0;
-
-    list-style: none;
-  };
-  &__item {
-    display: block;
-    max-width: 270px;
-    width: 100%;
-    min-height: 455px;
-    background-color: dimgrey;
-    margin: 0 auto 30px;
-  };
-  &__btn-container {
-    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100px;
+    height: 3px;
+    background-color: $main-highlight-color;
+    position: absolute;
   }
 }
 
@@ -192,3 +128,11 @@
     height: 40px;
   }
 }
+
+@import 'landing';
+@import 'header';
+@import 'dashboard';
+@import 'bilboard';
+@import 'cons';
+@import 'category';
+@import 'pop-instr';

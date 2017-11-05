@@ -23,6 +23,7 @@
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.0",
     "gulp-concat": "^2.6.1",
+    "gulp-css-url-adjuster": "^0.2.3",
     "gulp-csscomb": "^3.0.8",
     "gulp-imagemin": "^3.4.0",
     "gulp-jshint": "^2.0.4",

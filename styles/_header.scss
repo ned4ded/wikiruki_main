@@ -7,6 +7,13 @@
     display: -ms-flex;
     display: flex;
     justify-content: flex-start;
+    position: relative;
+
+    @media (max-width: 1199px) {
+      &-toggle {
+        width: 100%;
+      }
+    }
   }
 
   &__link {
@@ -64,6 +71,8 @@
       align-items: center;
     }
 
+
+
   }
 }
 // Bootstrap
@@ -84,12 +93,41 @@
   .dropdown-menu > li:not(:last-of-type) > a {
     margin-bottom: 27px;
   }
+
+  @media (max-width: 1199px) {
+    .navbar-collapse {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 58px;
+      background-color: white;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+    }
+
+    .dropdown-menu {
+      position: static;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      box-shadow: inset 0 6px 12px rgba(0,0,0,.175);
+
+      & > li > a {
+        padding: 7px 17px;
+        font-weight: 400;
+      }
+
+      & > li:not(:last-of-type) > a {
+        margin: 0;
+      }
+    }
+  }
 }
 
 
 // Special page styles
 .mp__header {
-
   & .header__logo {
     margin-top: 2px;
     margin-bottom: 1px;
@@ -98,5 +136,58 @@
   & .mp__btn {
     align-self: center;
     margin-left: 47px;
+  }
+
+  @media (max-width: 1199px) {
+    .header {
+      &__menu {
+        margin: 0;
+        display: flex;
+        flex-flow: column nowrap;
+        height: 100%;
+        width: 100%;
+        padding-bottom: 10px;
+
+        &-item {
+          flex-flow: column nowrap;
+        }
+      }
+
+      &__link {
+        width: 100%;
+        margin: 0;
+
+        &:hover {
+          background-color: $semi-bg-color-6;
+        }
+
+        &.dashboard__panel-item:hover {
+          background-color: transparent;
+        }
+
+        &:active {
+          background-color: $main-highlight-color;
+        }
+
+        &[aria-expanded="true"] {
+          background-color: $main-highlight-color;
+
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+
+    & .mp__btn {
+      margin: 0;
+      margin-top: 6px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .header .mp__btn {
+        margin-top: 2px;
+    }
   }
 }

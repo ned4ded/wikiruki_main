@@ -16,13 +16,20 @@
   ],
   "dependencies": {
     "bootstrap": "3.3.7",
-    "jquery": "3.2.x"
+    "jquery": "3.2.x",
+    "slick-carousel": "slick-slide#^1.8.1"
   },
   "overrides": {
     "bootstrap": {
-      "main" : [
+      "main": [
         "dist/css/bootstrap.css",
         "dist/js/bootstrap.js"
+      ]
+    },
+    "slick-carousel": {
+      "main" : [
+        "slick/slick.css",
+        "slick/slick.js"
       ]
     }
   }

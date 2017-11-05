@@ -1,0 +1,129 @@
+
+.popular-instr {
+  padding-bottom: 135px;
+  &__heading {
+    margin-bottom: 49px;
+  }
+
+  &__list {
+    margin-bottom: 39px;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: block;
+    max-width: 270px;
+    width: 100%;
+    min-height: 455px;
+    margin: 0 auto 30px;
+  }
+
+  &__btn-container {
+    text-align: center;
+  }
+
+  .instruction {
+    width: 100%;
+
+    &__image {
+      width: 100%;
+      height: 100%;
+    }
+
+    &__heading,
+    &__author,
+    &__text,
+    &__date {
+    	font-family: 'Open Sans', sans-serif;
+    }
+
+    &__heading {
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.35;
+      text-align: left;
+      color: rgba(17, 17, 17, 0.9);
+      margin: 10px 21px;
+    }
+
+    &__author {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.71;
+      text-align: left;
+      color: $main-highlight-color;
+      opacity: 0.85;
+      text-decoration: underline;
+      margin: 10px 23px 2px;
+    }
+
+    &__date {
+      margin: 2px 23px 12px;
+      font-size: 12px;
+    }
+
+    &__text {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.43;
+      text-align: left;
+      color: rgba(17, 17, 17, 0.8);
+      margin: 12px 21px 9px;
+      max-height: 60px;
+      overflow: hidden;
+    }
+
+    &__categories {
+      display: flex;
+      margin: 9px 21px 17px;
+    }
+
+    .category-list {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.50;
+      text-align: left;
+      color: rgba(47, 48, 59, 0.6);
+
+      &__heading {
+        padding: 0;
+        padding-right: 15px;
+
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1.71;
+        text-align: left;
+        color: rgba(17, 17, 17, 0.9);
+      }
+
+      &__name {
+        margin-bottom: 0;
+      }
+    }
+
+    &__social {
+      margin-right: 21px;
+      margin-left: 21px;
+      padding: 10px 0;
+      font-size: 12px;
+    }
+
+    &__icon {
+      margin-left: 14px;
+
+      &:first-of-type {
+        margin: 0;
+      }
+    }
+
+    .c-landing-icon-sm {
+      padding-left: 24px;
+    }
+
+    .c-landing-icon-sm:after {
+      background-color: black;
+      transform: scale(0.72);
+    }
+  }
+}
