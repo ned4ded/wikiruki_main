@@ -58,22 +58,26 @@
 }
 
 .mp__btn {
+  &:focus {
+    color: white;
+    background-color: #3f36ff;
+    text-decoration: none;
+  }
+
   &:hover, &:focus:hover {
     color: #3f36ff;
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0);
   }
-}
-.mp__btn:active,
-.mp__btn:hover:active {
-  color: white;
-  background-color: #0901df;
+
+  &:active,
+  &:hover:active {
+    color: white;
+    background-color: #0901df;
+  }
 }
 
-.mp__btn:focus {
-  color: #3f36ff;
-  text-decoration: none;
-}
+
 
 @media (min-width: 1200px) {
   // anchor
