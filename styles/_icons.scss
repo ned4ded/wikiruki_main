@@ -1,0 +1,84 @@
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: black;
+
+  .mp__cons & {
+    width: 30px;
+    height: 30px;
+
+  }
+
+  &-container {
+    display: flex;
+    align-items: center;
+
+    .mp__cons & {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &-search {
+    fill: #a4a4a4;
+
+    & + .icon-text {
+      font-size: 0;
+    }
+  }
+
+  &-bell {
+    fill: #7e7e7e;
+
+    & + .icon-text {
+      font-size: 0;
+    }
+  }
+
+  &-msg {
+    fill: #7e7e7e;
+
+    & + .icon-text {
+      font-size: 0;
+    }
+  }
+
+  &-exit {
+    margin: 0 5px;
+    fill: rgba(0, 0, 0, 0.7);
+
+    & + .icon-text {
+      @media (max-width: 767px) {
+        font-size: 0;
+      }
+    }
+  }
+
+  &-arrow {
+    display: none;
+    position: absolute;
+    width: 27px;
+    height: 19px;
+    top: 20px;
+    right: 20px;
+    fill: $main-background-color;
+
+    .category__link:hover & {
+      display: inherit;
+    }
+  }
+
+  &-light-bulb {
+    fill: rgba(0, 0, 0, 0.5);
+  }
+  &-rocket {
+    fill: rgba(0, 0, 0, 0.7);
+  }
+  &-dollar {
+    fill: rgba(0, 0, 0, 0.7);
+  }
+  &-paper-airplane {
+    fill: rgba(0, 0, 0, 0.67);
+  }
+}

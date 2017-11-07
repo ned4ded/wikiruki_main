@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+.mp .footer__logo {
+  margin: 0;
+}
+
 .mp__heading-2 {
   text-align: center;
 }
@@ -137,6 +141,44 @@
 
 .mp__footer-search-input {
   height: 40px;
+}
+
+.c-round {
+  position: relative;
+}
+
+.c-round[data-notification="true"]:after {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: #3f36ff;
+  position: absolute;
+  top: 15%;
+  right: 15%;
+  border-radius: 50%;
+}
+
+.c-badge {
+  position: relative;
+}
+
+.c-badge[data-message-count]:not([data-message-count='']):after {
+  content: attr(data-message-count);
+  font-family: 'Open Sans', serif;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 1;
+  min-width: 14px;
+  text-align: center;
+  color: #ffffff;
+  display: block;
+  padding: 2px 2px;
+  background-color: #3f36ff;
+  position: absolute;
+  border-radius: 2px;
+  left: 55%;
+  top: -6px;
 }
 
 /* Begin of Import section */
@@ -301,7 +343,7 @@ body {
   width: 22px;
   height: 26px;
   /*background-color: rgba(0, 0, 0, 0);*/
-  background: transparent url("../img/landing_images/sprite.png") no-repeat left top;
+  background: transparent url("../img/sprite.png") no-repeat left top;
   /*background: rgba(0, 0, 0, 0) url("/landing_images/sprite.png") no-repeat left top;*/
 }
 
@@ -2907,11 +2949,7 @@ so to undo custom designing of centration comment icon section above */
 }
 
 .dashboard__control-item {
-  font-size: 0;
   display: block;
-  width: 20px;
-  height: 20px;
-  background: black;
   margin-right: 20px;
 }
 
@@ -2996,22 +3034,6 @@ so to undo custom designing of centration comment icon section above */
   position: relative;
 }
 
-.dashboard__panel-exit .dashboard__panel-item {
-  padding-left: 28px;
-}
-
-.dashboard__panel-exit .dashboard__panel-item:after {
-  content: '';
-  display: block;
-  width: 20px;
-  height: 20px;
-  background: #000;
-  left: 28px;
-  top: 50%;
-  transform: translateY(-50%);
-  position: absolute;
-}
-
 .dashboard__user-info {
   padding: 20px 30px;
   display: -webkit-flex;
@@ -3054,17 +3076,17 @@ so to undo custom designing of centration comment icon section above */
   .header__menu-dashboard .dashboard__control {
     position: absolute;
     padding: 0;
-    display: block;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
     top: 50%;
     transform: translateY(-50%);
     left: 15px;
   }
 
-  .header__menu-dashboard .dashboard__control li {
-    margin-bottom: 5px;
-  }
-
-  .header__menu-dashboard .dashboard__control li [for="dashboard-switch"] {
+  .header__menu-dashboard .dashboard__control-avatar {
     display: none;
   }
 
@@ -3120,16 +3142,11 @@ so to undo custom designing of centration comment icon section above */
     padding-left: 28px;
     margin: 0;
     border: none;
-    position: relative;
   }
 
   .header__menu-dashboard .dashboard__panel-exit .dashboard__panel-item {
     margin-left: -5px;
     border-left: 1px solid rgba(199, 199, 199, 0.6);
-  }
-
-  .header__menu-dashboard .dashboard__panel-exit .dashboard__panel-item:after {
-    left: 10px;
   }
 }
 
@@ -3140,10 +3157,6 @@ so to undo custom designing of centration comment icon section above */
 
   .dashboard__userdata {
     display: none;
-  }
-
-  .dashboard__panel-exit .header__link {
-    font-size: 0;
   }
 }
 
@@ -3257,17 +3270,6 @@ so to undo custom designing of centration comment icon section above */
   left: 56px;
 }
 
-.mp__cons-item:after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  top: 0;
-  left: 0;
-  background-color: black;
-}
-
 .mp__cons-item-heading {
   font-family: 'Open Sans', serif;
   margin: 0;
@@ -3349,17 +3351,6 @@ so to undo custom designing of centration comment icon section above */
   border-radius: 6px;
 }
 
-.mp__category .category__link:hover:after {
-  content: '';
-  display: block;
-  width: 27px;
-  height: 19px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: black;
-}
-
 .mp__category .category__link:hover .category__background {
   filter: blur(3px);
 }
@@ -3392,7 +3383,7 @@ so to undo custom designing of centration comment icon section above */
   top: 0;
   width: 100%;
   height: 100%;
-  background: dimgrey url("../img/sprite.jpg") 0 0 no-repeat;
+  background: dimgrey url("../img/mp__sprite.jpg") 0 0 no-repeat;
   z-index: -1;
 }
 
@@ -3564,11 +3555,111 @@ so to undo custom designing of centration comment icon section above */
   margin: 0;
 }
 
+.popular-instr .instruction__icon:not(:last-of-type) {
+  font-family: 'Open Sans', serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #111111;
+}
+
+.popular-instr .instruction__icon:last-of-type {
+  font-family: 'Open Sans', serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(17, 17, 17, 0.8);
+}
+
 .popular-instr .instruction .c-landing-icon-sm {
   padding-left: 24px;
 }
 
 .popular-instr .instruction .c-landing-icon-sm:after {
-  background-color: black;
   transform: scale(0.72);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: black;
+}
+
+.mp__cons .icon {
+  width: 30px;
+  height: 30px;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+}
+
+.mp__cons .icon-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.icon-search {
+  fill: #a4a4a4;
+}
+
+.icon-search + .icon-text {
+  font-size: 0;
+}
+
+.icon-bell {
+  fill: #7e7e7e;
+}
+
+.icon-bell + .icon-text {
+  font-size: 0;
+}
+
+.icon-msg {
+  fill: #7e7e7e;
+}
+
+.icon-msg + .icon-text {
+  font-size: 0;
+}
+
+.icon-exit {
+  margin: 0 5px;
+  fill: rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 767px) {
+  .icon-exit + .icon-text {
+    font-size: 0;
+  }
+}
+
+.icon-arrow {
+  display: none;
+  position: absolute;
+  width: 27px;
+  height: 19px;
+  top: 20px;
+  right: 20px;
+  fill: #ffffff;
+}
+
+.category__link:hover .icon-arrow {
+  display: inherit;
+}
+
+.icon-light-bulb {
+  fill: rgba(0, 0, 0, 0.5);
+}
+
+.icon-rocket {
+  fill: rgba(0, 0, 0, 0.7);
+}
+
+.icon-dollar {
+  fill: rgba(0, 0, 0, 0.7);
+}
+
+.icon-paper-airplane {
+  fill: rgba(0, 0, 0, 0.67);
 }

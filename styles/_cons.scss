@@ -34,17 +34,6 @@
       left: 56px;
     }
 
-    &:after {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      top: 0;
-      left: 0;
-      background-color: black;
-    }
-
     &-heading {
       font-family: 'Open Sans', serif;
       margin: 0;

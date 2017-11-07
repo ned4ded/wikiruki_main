@@ -4,19 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Wikiruki: Main Page</title>
+  <title>Wikiruki: Главная страница</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/slick.min.css">
   <link rel="stylesheet" href="css/custom.css">
 </head>
 <body class="mp">
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" enable-background="new 0 0 100 100" xml:space="preserve" style="display: none;">
+    <defs>
+      <!-- SVG icons for this page -->
+      <symbol id="icon-search" viewBox="-1 -1 19 19">
+        <!-- Dashboard and footer icon search -->
+        <path d="M17.559,15.431 L13.648,11.521 C13.628,11.500 13.603,11.486 13.582,11.466 C14.351,10.299 14.800,8.902 14.800,7.399 C14.800,3.312 11.487,-0.001 7.400,-0.001 C3.313,-0.001 -0.000,3.312 -0.000,7.399 C-0.000,11.486 3.313,14.800 7.400,14.800 C8.902,14.800 10.299,14.350 11.467,13.581 C11.486,13.603 11.500,13.627 11.521,13.648 L15.431,17.558 C16.019,18.146 16.971,18.146 17.559,17.558 C18.146,16.971 18.146,16.019 17.559,15.431 ZM7.400,12.234 C4.730,12.234 2.565,10.070 2.565,7.399 C2.565,4.729 4.730,2.565 7.400,2.565 C10.070,2.565 12.235,4.729 12.235,7.399 C12.235,10.070 10.070,12.234 7.400,12.234 Z"/>
+      </symbol>
+      <symbol id="icon-bell" viewBox="0 0 16 20">
+        <!-- Dashboard notification icon -->
+        <path d="M-0.000,16.923 L-0.000,15.897 L2.000,13.846 L2.000,8.717 C2.000,5.564 3.635,2.933 6.500,2.235 L6.500,1.538 C6.500,0.687 7.170,-0.000 8.000,-0.000 C8.830,-0.000 9.500,0.687 9.500,1.538 L9.500,2.235 C12.365,2.933 14.000,5.564 14.000,8.717 L14.000,13.846 L16.000,15.897 L16.000,16.923 L-0.000,16.923 ZM8.000,19.999 C6.895,19.999 6.000,19.081 6.000,17.948 L10.000,17.948 C10.000,19.081 9.105,19.999 8.000,19.999 Z"/>
+      </symbol>
+      <symbol id="icon-msg" viewBox="0 0 20 16">
+        <!-- Dashboard message icon -->
+        <path d="M19.475,15.467 C19.126,15.823 18.705,16.001 18.214,16.001 L1.786,16.001 C1.295,16.001 0.874,15.823 0.524,15.467 C0.175,15.111 -0.000,14.683 -0.000,14.182 L-0.000,5.158 C0.327,5.529 0.703,5.859 1.127,6.147 C3.821,8.011 5.670,9.318 6.674,10.068 C7.098,10.386 7.442,10.634 7.706,10.812 C7.970,10.991 8.322,11.173 8.761,11.358 C9.200,11.544 9.609,11.637 9.989,11.637 L10.000,11.637 L10.011,11.637 C10.391,11.637 10.800,11.544 11.239,11.358 C11.678,11.173 12.029,10.991 12.293,10.812 C12.558,10.634 12.902,10.386 13.326,10.068 C14.591,9.136 16.444,7.829 18.884,6.147 C19.308,5.851 19.680,5.522 20.000,5.158 L20.000,14.182 C20.000,14.683 19.825,15.111 19.475,15.467 ZM18.092,4.930 C15.294,6.908 13.553,8.140 12.868,8.624 C12.794,8.678 12.636,8.793 12.394,8.971 C12.152,9.149 11.951,9.293 11.791,9.403 C11.631,9.513 11.438,9.636 11.211,9.773 C10.984,9.909 10.770,10.011 10.569,10.079 C10.368,10.147 10.182,10.181 10.011,10.181 L10.000,10.181 L9.989,10.181 C9.818,10.181 9.632,10.147 9.431,10.079 C9.230,10.011 9.016,9.909 8.789,9.773 C8.562,9.636 8.368,9.513 8.208,9.403 C8.049,9.293 7.848,9.149 7.606,8.971 C7.364,8.793 7.206,8.678 7.132,8.624 C6.454,8.140 5.480,7.448 4.207,6.550 C2.935,5.653 2.173,5.112 1.920,4.931 C1.458,4.613 1.023,4.174 0.614,3.618 C0.205,3.061 -0.000,2.544 -0.000,2.066 C-0.000,1.475 0.154,0.983 0.463,0.588 C0.772,0.194 1.213,-0.002 1.786,-0.002 L18.214,-0.002 C18.698,-0.002 19.116,0.176 19.470,0.532 C19.823,0.888 20.000,1.316 20.000,1.816 C20.000,2.415 19.818,2.987 19.453,3.532 C19.088,4.078 18.635,4.544 18.092,4.930 Z"/>
+      </symbol>
+      <symbol id="icon-exit" viewBox="0 1 14 15">
+        <!-- Dashboard exit icon -->
+        <path d="M7.000,15.000 C3.134,15.000 -0.000,11.922 -0.000,8.125 C-0.000,5.366 1.670,2.908 4.199,1.822 C4.521,1.684 4.896,1.828 5.037,2.144 C5.178,2.460 5.031,2.829 4.709,2.967 C2.639,3.856 1.273,5.868 1.273,8.125 C1.273,11.231 3.837,13.750 7.000,13.750 C10.163,13.750 12.727,11.231 12.727,8.125 C12.727,5.867 11.361,3.856 9.290,2.967 C8.968,2.829 8.821,2.460 8.962,2.144 C9.102,1.828 9.477,1.684 9.799,1.822 C12.330,2.907 14.000,5.366 14.000,8.125 C14.000,11.921 10.866,15.000 7.000,15.000 ZM7.000,6.875 C6.648,6.875 6.363,6.595 6.363,6.250 L6.363,0.625 C6.363,0.279 6.648,-0.000 7.000,-0.000 C7.351,-0.000 7.636,0.279 7.636,0.625 L7.636,6.250 C7.636,6.595 7.351,6.875 7.000,6.875 Z"/>
+      </symbol>
+
+      <!-- Cons section icon -->
+      <symbol id="icon-light-bulb" viewBox="0 0 23 33">
+        <path d="M19.052,19.896 C18.087,20.929 17.735,22.382 17.616,23.412 C17.588,23.666 17.377,23.856 17.127,23.856 L6.866,23.853 C6.617,23.853 6.406,23.663 6.377,23.409 C6.258,22.380 5.906,20.928 4.900,19.860 C4.899,19.858 4.898,19.857 4.896,19.855 C2.409,17.709 0.983,14.579 0.983,11.258 C0.984,5.054 5.925,0.006 11.998,0.006 C18.071,0.006 23.012,5.054 23.012,11.258 C23.012,14.601 21.569,17.750 19.052,19.896 ZM11.998,1.012 C6.467,1.012 1.969,5.609 1.969,11.258 C1.969,14.299 3.283,17.166 5.575,19.122 C5.604,19.147 5.631,19.176 5.654,19.208 C6.675,20.319 7.112,21.728 7.294,22.846 L16.699,22.849 C16.883,21.715 17.330,20.281 18.382,19.161 C20.713,17.169 22.028,14.301 22.028,11.257 C22.027,5.609 17.529,1.012 11.998,1.012 ZM6.866,25.893 L17.127,25.893 C17.399,25.893 17.620,26.119 17.620,26.397 C17.620,26.674 17.400,26.900 17.127,26.900 L6.866,26.900 C6.595,26.900 6.374,26.674 6.374,26.397 C6.374,26.119 6.595,25.893 6.866,25.893 ZM6.866,28.939 L17.127,28.939 C17.399,28.939 17.620,29.165 17.620,29.442 C17.620,29.720 17.400,29.946 17.127,29.946 L6.866,29.946 C6.595,29.946 6.374,29.720 6.374,29.442 C6.374,29.165 6.595,28.939 6.866,28.939 ZM9.849,31.986 L14.145,31.986 C14.417,31.986 14.638,32.212 14.638,32.489 C14.638,32.767 14.417,32.993 14.145,32.993 L9.849,32.993 C9.577,32.993 9.356,32.767 9.356,32.489 C9.356,32.212 9.577,31.986 9.849,31.986 Z"/>
+      </symbol>
+      <symbol id="icon-rocket" viewBox="0 0 29 29">
+        <path d="M21.038,18.059 C20.776,18.320 20.496,18.558 20.208,18.786 C20.246,18.868 20.282,18.961 20.309,19.078 C20.754,21.007 19.687,27.190 12.464,28.986 C12.428,28.995 12.391,28.999 12.355,28.999 C12.206,28.999 12.064,28.926 11.978,28.799 C11.872,28.641 11.876,28.433 11.989,28.279 C13.796,25.804 14.510,23.825 14.215,22.099 C14.015,22.210 13.821,22.322 13.633,22.437 C13.560,22.483 13.478,22.505 13.396,22.505 C13.279,22.505 13.164,22.460 13.076,22.372 L12.363,21.661 L11.030,22.990 C10.942,23.078 10.826,23.123 10.710,23.123 C10.594,23.123 10.479,23.078 10.390,22.990 L5.937,18.551 C5.851,18.466 5.803,18.350 5.803,18.230 C5.803,18.109 5.851,17.994 5.937,17.909 L7.267,16.583 L6.556,15.874 C6.407,15.726 6.380,15.494 6.491,15.315 C6.616,15.114 6.736,14.905 6.854,14.690 C5.137,14.427 3.171,15.142 0.719,16.920 C0.640,16.978 0.546,17.007 0.453,17.007 C0.365,17.007 0.276,16.981 0.199,16.929 C0.041,16.822 -0.033,16.628 0.014,16.443 C1.820,9.227 8.025,8.173 9.958,8.625 C10.051,8.646 10.132,8.673 10.202,8.702 C10.417,8.436 10.640,8.177 10.884,7.934 C17.597,1.243 25.083,-1.773 27.931,1.064 C28.640,1.771 29.000,2.770 29.000,4.032 C29.000,7.732 25.875,13.239 21.038,18.059 ZM13.456,27.742 C16.626,26.608 18.119,24.539 18.820,22.915 C19.479,21.389 19.536,20.036 19.457,19.441 L15.074,21.747 C15.447,23.510 14.927,25.444 13.456,27.742 ZM6.899,18.230 L10.710,22.029 L11.721,21.022 L11.202,20.505 L7.909,17.223 L6.899,18.230 ZM9.111,9.448 C8.403,9.448 7.297,9.595 6.081,10.120 C4.460,10.820 2.393,12.308 1.259,15.456 C3.566,13.987 5.508,13.469 7.276,13.841 L9.588,9.475 C9.462,9.459 9.301,9.448 9.111,9.448 ZM27.291,1.705 C24.884,-0.691 17.665,2.455 11.524,8.575 C11.029,9.068 10.603,9.628 10.218,10.224 L8.377,13.698 C8.073,14.322 7.773,14.927 7.448,15.483 L13.466,21.482 C14.163,21.077 14.922,20.713 15.719,20.329 C17.389,19.526 19.117,18.695 20.399,17.418 C25.001,12.830 28.094,7.450 28.094,4.032 C28.094,3.019 27.824,2.236 27.291,1.705 ZM23.220,9.674 C22.689,10.203 21.989,10.468 21.290,10.468 C20.591,10.468 19.892,10.203 19.360,9.674 C18.843,9.160 18.559,8.476 18.559,7.748 C18.559,7.021 18.843,6.337 19.360,5.823 C20.424,4.764 22.157,4.764 23.220,5.823 C23.737,6.337 24.021,7.021 24.021,7.748 C24.021,8.476 23.737,9.160 23.220,9.674 ZM22.581,6.466 C22.225,6.111 21.758,5.934 21.290,5.934 C20.822,5.934 20.355,6.111 19.998,6.466 C19.655,6.808 19.465,7.264 19.465,7.748 C19.465,8.233 19.655,8.688 19.998,9.031 C20.711,9.740 21.869,9.740 22.581,9.031 C22.925,8.688 23.115,8.233 23.115,7.748 C23.115,7.264 22.925,6.808 22.581,6.466 ZM5.256,19.803 C5.434,19.626 5.721,19.627 5.897,19.804 C6.074,19.981 6.073,20.268 5.896,20.445 L2.914,23.418 C2.825,23.506 2.709,23.550 2.594,23.550 C2.477,23.550 2.362,23.506 2.273,23.417 C2.096,23.239 2.097,22.953 2.274,22.776 L5.256,19.803 ZM6.820,21.362 C6.997,21.185 7.284,21.185 7.461,21.363 C7.638,21.541 7.637,21.827 7.460,22.004 L2.931,26.518 C2.842,26.606 2.726,26.650 2.611,26.650 C2.494,26.650 2.378,26.606 2.290,26.517 C2.113,26.339 2.114,26.052 2.291,25.876 L6.820,21.362 ZM8.384,22.920 C8.561,22.743 8.848,22.744 9.024,22.921 C9.201,23.099 9.201,23.385 9.023,23.562 L6.041,26.534 C5.952,26.622 5.837,26.667 5.721,26.667 C5.605,26.667 5.489,26.622 5.400,26.534 C5.224,26.356 5.224,26.070 5.401,25.893 L8.384,22.920 Z"/>
+      </symbol>
+      <symbol id="icon-dollar" viewBox="0 0 26 26">
+        <path d="M25.998,13.000 C25.999,16.589 24.544,19.840 22.193,22.191 C19.841,24.544 16.591,25.999 13.001,25.999 L13.000,25.999 C9.411,25.999 6.161,24.544 3.808,22.191 C1.455,19.839 -0.000,16.589 -0.000,13.000 C-0.000,9.410 1.455,6.159 3.808,3.807 C6.160,1.454 9.410,-0.001 13.000,-0.001 L13.001,-0.001 L13.001,0.001 C16.591,0.002 19.842,1.456 22.193,3.807 C24.544,6.159 26.000,9.409 26.000,12.998 L26.000,13.000 L26.000,13.000 L25.998,13.000 ZM25.187,13.000 L25.187,13.000 L25.187,12.998 C25.187,9.634 23.823,6.588 21.618,4.382 C19.412,2.176 16.364,0.810 13.001,0.810 L13.001,0.812 L13.000,0.812 C9.635,0.812 6.588,2.176 4.383,4.382 C2.178,6.587 0.812,9.634 0.812,13.000 C0.812,16.364 2.177,19.411 4.383,21.617 C6.587,23.822 9.635,25.187 13.000,25.187 L13.001,25.187 C16.366,25.187 19.413,23.822 21.618,21.617 C23.825,19.411 25.189,16.364 25.189,13.000 L25.187,13.000 ZM10.872,11.475 L10.893,11.498 C11.330,11.925 11.931,12.189 12.595,12.189 C12.613,12.189 12.631,12.190 12.649,12.193 C13.609,12.217 14.477,12.611 15.116,13.237 L15.142,13.261 C15.803,13.922 16.212,14.836 16.212,15.846 C16.212,16.854 15.802,17.770 15.141,18.430 L15.140,18.429 L15.139,18.430 C14.568,19.001 13.808,19.384 12.962,19.478 L12.962,20.996 C12.962,21.220 12.780,21.402 12.556,21.402 C12.333,21.402 12.150,21.220 12.150,20.996 L12.150,19.478 C11.305,19.384 10.546,19.002 9.975,18.430 L9.974,18.429 L9.973,18.429 L9.972,18.428 C9.310,17.765 8.900,16.851 8.900,15.844 C8.900,15.620 9.082,15.438 9.307,15.438 C9.531,15.438 9.713,15.620 9.713,15.844 C9.713,16.629 10.031,17.341 10.544,17.853 L10.546,17.855 C11.059,18.368 11.770,18.686 12.555,18.686 C13.341,18.686 14.052,18.368 14.567,17.855 L14.566,17.854 C15.081,17.339 15.399,16.629 15.399,15.844 C15.399,15.059 15.081,14.348 14.566,13.835 L14.548,13.815 C14.035,13.312 13.331,13.003 12.555,13.003 C12.537,13.003 12.519,13.001 12.501,12.999 C11.656,12.975 10.890,12.627 10.324,12.074 L10.297,12.049 C9.709,11.463 9.346,10.649 9.346,9.752 C9.346,9.752 9.346,9.752 9.346,9.751 C9.346,9.751 9.346,9.751 9.346,9.750 C9.346,8.853 9.710,8.039 10.297,7.453 L10.324,7.428 C10.819,6.944 11.467,6.617 12.187,6.527 L12.187,4.715 C12.187,4.491 12.369,4.309 12.593,4.309 C12.818,4.309 13.000,4.491 13.000,4.715 L13.000,6.526 C13.734,6.618 14.393,6.954 14.891,7.453 L14.892,7.453 L14.893,7.454 L14.894,7.455 C15.482,8.043 15.845,8.855 15.845,9.750 C15.845,9.975 15.663,10.157 15.439,10.157 C15.215,10.157 15.033,9.975 15.033,9.750 C15.033,9.076 14.760,8.466 14.321,8.027 L14.319,8.025 C13.880,7.586 13.269,7.313 12.596,7.313 C11.933,7.313 11.331,7.577 10.894,8.004 L10.873,8.027 C10.431,8.467 10.158,9.077 10.158,9.750 C10.158,9.751 10.158,9.751 10.158,9.751 C10.158,9.752 10.158,9.752 10.158,9.752 C10.158,10.425 10.432,11.035 10.872,11.475 ZM14.893,7.455 L14.890,8.026 C15.049,7.870 15.050,7.614 14.893,7.455 Z"/>
+      </symbol>
+      <symbol id="icon-paper-airplane" viewBox="0 0 31 24">
+        <path d="M30.999,1.439 C30.999,1.534 30.971,1.630 30.912,1.713 L15.411,23.794 L15.410,23.793 C15.394,23.815 15.375,23.839 15.354,23.858 C15.165,24.045 14.858,24.043 14.670,23.856 L8.858,18.095 C8.670,17.908 8.671,17.604 8.860,17.418 C9.048,17.232 9.355,17.233 9.543,17.420 L14.947,22.776 L30.031,1.290 L30.031,1.116 L1.402,9.353 L7.325,15.222 L24.433,3.921 C24.654,3.774 24.955,3.832 25.103,4.052 C25.252,4.271 25.192,4.569 24.971,4.716 L7.747,16.094 L7.747,22.363 L9.342,20.782 C9.530,20.595 9.836,20.594 10.025,20.780 C10.214,20.966 10.215,21.270 10.027,21.457 L7.605,23.858 C7.418,24.045 7.111,24.046 6.922,23.861 C6.827,23.766 6.780,23.644 6.780,23.521 L6.778,23.521 L6.778,16.038 L0.139,9.459 L0.140,9.458 C0.085,9.402 0.041,9.334 0.018,9.253 C-0.055,9.000 0.092,8.734 0.347,8.660 L30.340,0.031 C30.394,0.011 30.453,-0.001 30.516,-0.001 C30.783,-0.001 31.000,0.214 31.000,0.479 L31.000,1.439 L30.999,1.439 Z"/>
+      </symbol>
+
+      <!-- Category section arrow icon -->
+      <symbol id="icon-arrow" viewBox="0 0 27 19">
+        <path d="M18.181,0.285 C17.814,-0.096 17.201,-0.096 16.821,0.285 C16.453,0.653 16.453,1.266 16.821,1.633 L23.720,8.539 L0.953,8.539 C0.422,8.540 -0.000,8.962 -0.000,9.493 C-0.000,10.024 0.422,10.460 0.953,10.460 L23.720,10.460 L16.821,17.353 C16.453,17.733 16.453,18.347 16.821,18.714 C17.201,19.095 17.814,19.095 18.181,18.714 L26.714,10.174 C27.095,9.806 27.095,9.193 26.714,8.826 L18.181,0.285 Z"/>
+      </symbol>
+    </defs>
+  </svg>
+
   <header class="header mp__header navbar-fixed-top">
     <nav class="container">
       <div class="header__nav">
         <div class="header__nav-toggle">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mp__header-collapse" aria-expanded="false">
           </button>
-          <a class="logo header__logo" href="index.html"><img src="http://via.placeholder.com/255x55" alt="Логотип Wikiruki: символика компании на синем фоне" width="255" height="55" /></a>
+          <a class="logo header__logo" href="index.html"><img src="img/logo.png" alt="Логотип Wikiruki: символика компании на синем фоне" width="255" height="55" /></a>
         </div>
         <div class="collapse navbar-collapse" id="mp__header-collapse">
           <ul class="header__menu">
@@ -33,10 +74,34 @@
             <li class="header__menu-item dashboard header__menu-dashboard">
               <input id="dashboard-switch" type="checkbox" hidden>
               <ul class="dashboard__control">
-                <li><a href="#" class="dashboard__control-item dashboard__icon icon-search">Поиск</a></li>
-                <li><a href="#" class="dashboard__control-item dashboard__icon icon-bell" data-notification="true">Оповещения</a></li>
-                <li><a href="#" class="dashboard__control-item dashboard__icon icon-mail" data-message-count="11">Сообщения</a></li>
-                <li><label for="dashboard-switch"><img class="dashboard__avatar" src="http://via.placeholder.com/40x40" alt="Аватар пользователя" data-update="false"><span class="caret"></span></label></li>
+                <li>
+                  <a href="#" class="dashboard__control-item icon-container">
+                    <svg class="icon icon-search">
+                      <use xlink:href="#icon-search" />
+                    </svg>
+                    <span class="icon-text">Поиск</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="dashboard__control-item icon-container c-round" data-notification="true">
+                    <svg class="icon icon-bell">
+                      <use xlink:href="#icon-bell" />
+                    </svg>
+                    <span class="icon-text">Оповещения</span>
+                  </a>
+                <li>
+                  <a href="#" class="dashboard__control-item icon-container c-badge" data-message-count="12">
+                    <svg class="icon icon-msg">
+                      <use xlink:href="#icon-msg" />
+                    </svg>
+                    <span class="icon-text">Сообщения</span>
+                  </a>
+                <li class="dashboard__control-avatar">
+                  <label for="dashboard-switch">
+                    <img class="dashboard__avatar" src="http://via.placeholder.com/40x40" alt="Аватар пользователя" data-update="false">
+                    <span class="caret"></span>
+                  </label>
+                </li>
               </ul>
               <div class="dashboard__panel">
                 <div class="dashboard__user-info">
@@ -50,7 +115,13 @@
                   <li><a href="#" class="header__link dashboard__panel-item">Диалоги</a></li>
                   <li><a href="#" class="header__link dashboard__panel-item">Настройки</a></li>
                   <li><a href="#" class="header__link dashboard__panel-item">Профиль</a></li>
-                  <li class="dashboard__panel-exit"><a href="#" class="header__link dashboard__panel-item dashboard__icon icon-quit">Выйти</a></li>
+                  <li class="dashboard__panel-exit">
+                    <a href="#" class="header__link dashboard__panel-item icon-container">
+                      <svg class="icon icon-exit">
+                        <use xlink:href="#icon-exit" />
+                      </svg>
+                      <span class="icon-text">Выйти</span>
+                    </a>
                 </ul>
               </div>
             </li>
@@ -85,18 +156,38 @@
         <h2 class="mp__heading-2 mp__cons-heading">Ваши преимущества и выгода</h2>
         <ul class="mp__cons-list row">
           <li class="mp__cons-item col-lg-3 col-sm-6 col-xs-12">
+            <div class="icon-container">
+              <svg class="icon icon-light-bulb">
+                <use xlink:href="#icon-light-bulb" />
+              </svg>
+            </div>
             <h3 class="mp__cons-item-heading">Повышайте навыки</h3>
             <p class="mp__cons-item-p">Перенимайте практический опыт наших мастеров</p>
           </li>
           <li class="mp__cons-item col-lg-3 col-sm-6 col-xs-12">
+            <div class="icon-container">
+              <svg class="icon icon-rocket">
+                <use xlink:href="#icon-rocket" />
+              </svg>
+            </div>
             <h3 class="mp__cons-item-heading">Делитесь опытом</h3>
             <p class="mp__cons-item-p">Cтаньте для других мастером в любом деле</p>
           </li>
           <li class="mp__cons-item col-lg-3 col-sm-6 col-xs-12">
+            <div class="icon-container">
+              <svg class="icon icon-dollar">
+                <use xlink:href="#icon-dollar" />
+              </svg>
+            </div>
             <h3 class="mp__cons-item-heading">Получайте доход</h3>
             <p class="mp__cons-item-p">Превращайте опыт в деньги публикацией инструкций</p>
           </li>
           <li class="mp__cons-item col-lg-3 col-sm-6 col-xs-12">
+            <div class="icon-container">
+              <svg class="icon icon-paper-airplane">
+                <use xlink:href="#icon-paper-airplane" />
+              </svg>
+            </div>
             <h3 class="mp__cons-item-heading">Развивайте хобби</h3>
             <p class="mp__cons-item-p">Превратите любое хобби в источник своего дохода</p>
           </li>
@@ -115,6 +206,11 @@
               <span class="category__name">Красота</span>
               <span class="category__discr">Красота и спорт</span>
               <div class="category__background category__background--sport"></div>
+              <div class="icon-container">
+                <svg class="icon icon-arrow">
+                  <use xlink:href="#icon-arrow" />
+                </svg>
+              </div>
             </a>
           </div>
         </li>
@@ -124,6 +220,11 @@
               <span class="category__name">Ботаника</span>
               <span class="category__discr">Сад, огород, дача, строительство и ремонт</span>
               <div class="category__background category__background--garden"></div>
+              <div class="icon-container">
+                <svg class="icon icon-arrow">
+                  <use xlink:href="#icon-arrow" />
+                </svg>
+              </div>
             </a>
           </div>
         </li>
@@ -133,6 +234,11 @@
               <span class="category__name">Охота</span>
               <span class="category__discr">Охота, рыбалка</span>
               <div class="category__background category__background--hunting"></div>
+              <div class="icon-container">
+                <svg class="icon icon-arrow">
+                  <use xlink:href="#icon-arrow" />
+                </svg>
+              </div>
             </a>
           </div>
         </li>
@@ -142,6 +248,11 @@
               <span class="category__name">Кулинария</span>
               <span class="category__discr">Еда и напитки</span>
               <div class="category__background category__background--cooking"></div>
+              <div class="icon-container">
+                <svg class="icon icon-arrow">
+                  <use xlink:href="#icon-arrow" />
+                </svg>
+              </div>
             </a>
           </div>
         </li>
@@ -151,6 +262,11 @@
               <span class="category__name">Дизайн</span>
               <span class="category__discr">Интерьер, аксессуары</span>
               <div class="category__background category__background--design"></div>
+              <div class="icon-container">
+                <svg class="icon icon-arrow">
+                  <use xlink:href="#icon-arrow" />
+                </svg>
+              </div>
             </a>
           </div>
         </li>
@@ -160,6 +276,11 @@
               <span class="category__name">Подарки</span>
               <span class="category__discr">Рукоделие и хобби</span>
               <div class="category__background category__background--hobby"></div>
+              <div class="icon-container">
+                <svg class="icon icon-arrow">
+                  <use xlink:href="#icon-arrow" />
+                </svg>
+              </div>
             </a>
           </div>
         </li>
@@ -169,6 +290,11 @@
               <span class="category__name">Мастерская</span>
               <span class="category__discr">Мастерская, самоделкины</span>
               <div class="category__background category__background--workshop"></div>
+              <div class="icon-container">
+                <svg class="icon icon-arrow">
+                  <use xlink:href="#icon-arrow" />
+                </svg>
+              </div>
             </a>
           </div>
         </li>
@@ -178,6 +304,11 @@
               <span class="category__name">Наука</span>
               <span class="category__discr">Наука и технологии, программирование.</span>
               <div class="category__background category__background--science"></div>
+              <div class="icon-container">
+                <svg class="icon icon-arrow">
+                  <use xlink:href="#icon-arrow" />
+                </svg>
+              </div>
             </a>
           </div>
         </li>
@@ -187,6 +318,11 @@
               <span class="category__name">Авто</span>
               <span class="category__discr">Авто и другие ТС, гараж</span>
               <div class="category__background category__background--auto"></div>
+              <div class="icon-container">
+                <svg class="icon icon-arrow">
+                  <use xlink:href="#icon-arrow" />
+                </svg>
+              </div>
             </a>
           </div>
         </li>
@@ -196,6 +332,11 @@
               <span class="category__name">Искусство</span>
               <span class="category__discr">Искусство, фотография</span>
               <div class="category__background category__background--art"></div>
+              <div class="icon-container">
+                <svg class="icon icon-arrow">
+                  <use xlink:href="#icon-arrow" />
+                </svg>
+              </div>
             </a>
           </div>
         </li>
@@ -205,6 +346,11 @@
               <span class="category__name">Учёба</span>
               <span class="category__discr">Учёба и образование, бизнес</span>
               <div class="category__background category__background--study"></div>
+              <div class="icon-container">
+                <svg class="icon icon-arrow">
+                  <use xlink:href="#icon-arrow" />
+                </svg>
+              </div>
             </a>
           </div>
         </li>
@@ -214,6 +360,11 @@
               <span class="category__name">Здоровье</span>
               <span class="category__discr">Здоровье и медицина</span>
               <div class="category__background category__background--health"></div>
+              <div class="icon-container">
+                <svg class="icon icon-arrow">
+                  <use xlink:href="#icon-arrow" />
+                </svg>
+              </div>
             </a>
           </div>
         </li>
@@ -536,13 +687,15 @@
     <div class="container">
       <div class="row">
         <div class="mp__footer-search col-sm-3 col-xs-12">
-          <a class="logo" href="index.html"><img src="http://via.placeholder.com/255x55" alt="Логотип Wikiruki: символика компании на синем фоне" class="logo header__logo" width="255" height="55" /></a>
+          <a class="logo" href="index.html">
+            <img src="img/logo-white.png" alt="Логотип Wikiruki: символика компании на синем фоне" class="logo footer__logo" width="195" height="37" />
+          </a>
           <div class="mp__footer-search-input"></div>
         </div>
         <div class="mp__footer-links col-sm-5 col-sm-offset-4 col-xs-12">
           <div class="row">
             <ul class="social__list col-sm-3 col-xs-12">
-              <h3 class="social-heading">About Us</h3>
+              <li><h3 class="social-heading">About Us</h3></li>
               <li class="social__item">Who We Are</li>
               <li class="social__item">Advertise</li>
               <li class="social__item">Contact</li>
@@ -550,7 +703,7 @@
               <li class="social__item">Help</li>
             </ul>
             <ul class="social__list col-sm-4 col-xs-12">
-              <h3 class="social-heading">Find Us</h3>
+              <li><h3 class="social-heading">Find Us</h3></li>
               <li class="social__item">Facebook</li>
               <li class="social__item">Youtube</li>
               <li class="social__item">Twetter</li>
@@ -558,7 +711,7 @@
               <li class="social__item">Google+</li>
             </ul>
             <ul class="social__list col-sm-5 col-xs-12">
-              <h3 class="social-heading">Resources</h3>
+              <li><h3 class="social-heading">Resources</h3></li>
               <li class="social__item">Пользовательское соглашение</li>
               <li class="social__item">Авторские права</li>
               <li class="social__item">Residency Program</li>

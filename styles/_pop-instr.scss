@@ -115,6 +115,20 @@
       &:first-of-type {
         margin: 0;
       }
+
+      &:not(:last-of-type) {
+        font-family: 'Open Sans', serif;
+        font-size: 12px;
+        font-weight: bold;
+        color: #111111;
+      }
+
+      &:last-of-type {
+        font-family: 'Open Sans', serif;
+        font-size: 12px;
+        font-weight: bold;
+        color: rgba(17, 17, 17, 0.8);
+      }
     }
 
     .c-landing-icon-sm {
@@ -122,7 +136,6 @@
     }
 
     .c-landing-icon-sm:after {
-      background-color: black;
       transform: scale(0.72);
     }
   }

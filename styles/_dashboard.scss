@@ -19,11 +19,7 @@ $border-divider: 1px solid rgba(199, 199, 199, 0.6);
     list-style: none;
 
     &-item {
-      font-size: 0;
       display: block;
-      width: 20px;
-      height: 20px;
-      background: black;
       margin-right: 20px;
     }
 
@@ -110,22 +106,6 @@ $border-divider: 1px solid rgba(199, 199, 199, 0.6);
       padding-left: 28px;
       border-top: $border-divider;
       position: relative;
-
-      & .dashboard__panel-item {
-        padding-left: 28px;
-
-        &:after {
-          content: '';
-          display: block;
-          width: 20px;
-          height: 20px;
-          background: #000;
-          left: 28px;
-          top: 50%;
-          transform: translateY(-50%);
-          position: absolute;
-        }
-      }
     }
   }
 
@@ -172,16 +152,16 @@ $border-divider: 1px solid rgba(199, 199, 199, 0.6);
       &__control {
         position: absolute;
         padding: 0;
-        display: block;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: space-around;
+        height: 100%;
         top: 50%;
         transform: translateY(-50%);
         left: 15px;
 
-        li {
-          margin-bottom: 5px;
-        }
-
-        li [for="dashboard-switch"] {
+        &-avatar {
           display: none;
         }
 
@@ -237,14 +217,10 @@ $border-divider: 1px solid rgba(199, 199, 199, 0.6);
           padding-left: 28px;
           margin: 0;
           border: none;
-          position: relative;
 
           .dashboard__panel-item {
             margin-left: -5px;
             border-left: $border-divider;
-            &:after {
-              left: 10px;
-            }
           }
         }
       }
@@ -259,9 +235,5 @@ $border-divider: 1px solid rgba(199, 199, 199, 0.6);
 
   .dashboard__userdata {
     display: none;
-  }
-
-  .dashboard__panel-exit .header__link  {
-    font-size: 0;
   }
 }
