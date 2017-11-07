@@ -158,7 +158,8 @@
         margin: 0;
         display: flex;
         flex-flow: column nowrap;
-        height: 100%;
+        // height fixing animation of toggling navbar in Chrome
+        height: 1000%;
         width: 100%;
         padding-bottom: 10px;
 
