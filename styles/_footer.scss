@@ -1,0 +1,123 @@
+@import 'variables';
+
+.mp__footer {
+  background-color: $semi-bg-color-2;
+  padding-top: 31px;
+  padding-bottom: 20px;
+
+  &-search-label {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    & .icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &-search {
+        width: 12px;
+        height: 12px;
+        fill: $main-highlight-color;
+      }
+    }
+  }
+
+  &-search-input {
+    width: 270px;
+    padding-left: 30px;
+    padding-right: 5px;
+    height: 40px;
+    border-radius: 3px;
+    background-color: $main-background-color;
+    border: solid 1px #dddddd;
+    font-weight: normal;
+
+    &::placeholder {
+      color: rgba(36, 36, 36, 0.5);
+    }
+
+    &:focus {
+      border-color: $main-highlight-color;
+    }
+  }
+
+  &-links  {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: -25px;
+
+    & > ul {
+      margin: 0;
+      padding: 0;
+      margin-left: 62px;
+    }
+
+    & .social {
+
+      &-heading {
+        margin: 0;
+        margin-bottom: 15px;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1.33;
+        color: $footer-h2;
+      }
+
+      &__item {
+        color: $footer-p;
+        font-family: 'Open sans', serif;
+        line-height: 1.93;
+
+        &:active {
+          opacity: 0.85;
+        }
+      }
+
+      &__icon {
+        padding-left: 21px;
+        position: relative;
+
+        &:after {
+          content: '';
+          position: absolute;
+          display: block;
+          width: 15px;
+          height: 15px;
+          background: transparent url(mp__sprite.jpg) 0 -480px no-repeat;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+        }
+      }
+    }
+
+    .icon {
+      &--fb:after {
+        background-position-x: -60px;
+      }
+
+      &--fb:after {
+        background-position-x: -60px;
+      }
+
+      &--ytb:after {
+        background-position-x: -15px;
+      }
+
+      &--tw:after {
+        background-position-x: -30px;
+      }
+
+      &--pint:after {
+        background-position-x: -45px;
+      }
+
+      &--ggl:after {
+        background-position-x: 0;
+      }
+    }
+  }
+
+}

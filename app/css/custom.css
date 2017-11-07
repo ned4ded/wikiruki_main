@@ -6,17 +6,45 @@
   padding: 0;
 }
 
+.mp {
+  min-width: 450px;
+}
+
 .mp .footer__logo {
-  margin: 0;
+  margin-bottom: 27px;
+}
+
+.mp .navbar-toggle::after {
+  display: none;
 }
 
 .mp__heading-2 {
+  font-size: 36px;
+  font-family: 'Open Sans', serif;
+  line-height: 1;
   text-align: center;
+  color: #100d40;
+  margin: 0;
+  padding-bottom: 26px;
+  position: relative;
+  text-align: center;
+}
+
+.mp__heading-2:after {
+  content: '';
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 100px;
+  height: 3px;
+  background-color: #3f36ff;
+  position: absolute;
 }
 
 .mp__btn {
   display: inline-block;
-  padding: 13px 15px 13px;
+  padding: 12px 14px 12px;
   font-weight: bold;
   font-size: 14px;
   line-height: 14px;
@@ -108,39 +136,6 @@
     -webkit-box-shadow: none;
     box-shadow: none;
   }
-}
-
-.mp__heading-2 {
-  font-size: 36px;
-  font-family: 'Open Sans', serif;
-  line-height: 1;
-  text-align: center;
-  color: #100d40;
-  margin: 0;
-  padding-bottom: 23px;
-  position: relative;
-}
-
-.mp__heading-2:after {
-  content: '';
-  display: block;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
-  width: 100px;
-  height: 3px;
-  background-color: #3f36ff;
-  position: absolute;
-}
-
-.mp__footer {
-  background-color: grey;
-  padding-top: 35px;
-  padding-bottom: 20px;
-}
-
-.mp__footer-search-input {
-  height: 40px;
 }
 
 .c-round {
@@ -1059,7 +1054,7 @@ so to undo custom designing of centration comment icon section above */
   display: block;
   width: 100%;
   height: 100%;
-  background: url("../img/landing_images/menu-icon.svg") no-repeat center;
+  background: url("../img/menu-icon.svg") no-repeat center;
 }
 
 .navbar-toggle:hover {
@@ -2827,15 +2822,27 @@ so to undo custom designing of centration comment icon section above */
   border-radius: 0;
   padding: 27px;
   padding-right: 30px;
+  margin-top: 10px;
 }
 
 .mp__header .dropdown-menu > li > a {
   padding: 0;
   font-weight: 600;
+  font-size: 14px;
+  color: rgba(16, 13, 64, 0.95);
+}
+
+.mp__header .dropdown-menu > li > a:hover {
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.mp__header .dropdown-menu > li > a:active {
+  color: #3f36ff;
 }
 
 .mp__header .dropdown-menu > li:not(:last-of-type) > a {
-  margin-bottom: 27px;
+  margin-bottom: 17px;
 }
 
 @media (max-width: 1199px) {
@@ -2875,7 +2882,7 @@ so to undo custom designing of centration comment icon section above */
 
 .mp__header .mp__btn {
   align-self: center;
-  margin-left: 47px;
+  margin-left: 44px;
 }
 
 @media (max-width: 1199px) {
@@ -2985,7 +2992,6 @@ so to undo custom designing of centration comment icon section above */
   visibility: hidden;
   position: absolute;
   width: 300px;
-  min-height: 260px;
   right: 0;
   top: calc(100% + 9px);
   background-color: #ffffff;
@@ -3009,7 +3015,7 @@ so to undo custom designing of centration comment icon section above */
 
 .dashboard__panel-list {
   margin: 0;
-  padding: 10px 29px;
+  padding: 10px 29px 0;
   list-style: none;
 }
 
@@ -3027,8 +3033,8 @@ so to undo custom designing of centration comment icon section above */
 }
 
 .dashboard__panel-exit {
-  margin: 10px -29px -10px;
-  padding: 30px 0;
+  margin: 10px -29px 4px;
+  padding: 0;
   padding-left: 28px;
   border-top: 1px solid rgba(199, 199, 199, 0.6);
   position: relative;
@@ -3096,7 +3102,7 @@ so to undo custom designing of centration comment icon section above */
 
   .header__menu-dashboard .dashboard__user-info {
     padding: 10px;
-    padding-left: 30px;
+    padding-left: 35px;
     border: none;
     width: 250px;
   }
@@ -3155,7 +3161,11 @@ so to undo custom designing of centration comment icon section above */
     margin-top: 2px;
   }
 
-  .dashboard__userdata {
+  .header__menu-dashboard .dashboard__panel-list li {
+    padding: 0 5px;
+  }
+
+  .header__menu-dashboard .dashboard__userdata {
     display: none;
   }
 }
@@ -3195,27 +3205,32 @@ so to undo custom designing of centration comment icon section above */
   border: none;
 }
 
+.bilboard__slider-dots > li > button:focus {
+  outline: none;
+}
+
 .bilboard__slider-dots > li:not(last-of-type) {
   margin-right: 5px;
 }
 
 .bilboard__info {
-  padding-top: 178px;
+  padding-top: 176px;
 }
 
 .bilboard__info-heading {
   font-size: 24px;
   font-family: 'Open Sans', serif;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.06;
   text-align: left;
   color: #ffffff;
-  width: 612px;
+  max-width: 612px;
   margin: 0;
 }
 
 .bilboard__info-heading-big {
   font-size: 140px;
+  letter-spacing: 0.037em;
 }
 
 .bilboard__info-p {
@@ -3224,22 +3239,28 @@ so to undo custom designing of centration comment icon section above */
   line-height: 1.5;
   text-align: left;
   color: #ffffff;
-  width: 415px;
-  hyphen: auto;
+  max-width: 415px;
   max-height: 54px;
   overflow: hidden;
   margin: 0;
-  margin-top: 8px;
+  margin-top: 4px;
+}
+
+@media (max-width: 769px) {
+  .bilboard__info-heading-big {
+    line-height: 1;
+    font-size: 18vw;
+  }
 }
 
 .mp__cons {
   background-color: #f6f6f6;
-  padding-top: 84px;
+  padding-top: 79px;
   padding-bottom: 69px;
 }
 
 .mp__cons-heading {
-  margin-bottom: 75px;
+  margin-bottom: 80px;
   padding: 0;
 }
 
@@ -3250,7 +3271,7 @@ so to undo custom designing of centration comment icon section above */
 .mp__cons-list {
   padding: 0;
   margin-top: 0;
-  margin-bottom: 70px;
+  margin-bottom: 55px;
 }
 
 .mp__cons-item {
@@ -3273,7 +3294,7 @@ so to undo custom designing of centration comment icon section above */
 .mp__cons-item-heading {
   font-family: 'Open Sans', serif;
   margin: 0;
-  margin-bottom: 18px;
+  margin-bottom: 15px;
   font-size: 18px;
   font-weight: 600;
   line-height: 1;
@@ -3299,13 +3320,17 @@ so to undo custom designing of centration comment icon section above */
   text-align: center;
 }
 
+.mp__cons-btn-container .mp__btn {
+  padding: 14px 25px 15px;
+}
+
 .mp__category {
-  padding-top: 73px;
-  padding-bottom: 55px;
+  padding-top: 68px;
+  padding-bottom: 38px;
 }
 
 .mp__category .category__heading {
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 
 .mp__category .category__list {
@@ -3345,7 +3370,7 @@ so to undo custom designing of centration comment icon section above */
   display: block;
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: 14px 20px 16px;
   position: absolute;
   overflow: hidden;
   border-radius: 6px;
@@ -3360,7 +3385,7 @@ so to undo custom designing of centration comment icon section above */
   position: absolute;
   font-family: 'Open Sans', serif;
   color: #ffffff;
-  top: 20px;
+  top: 14px;
   left: 20px;
 }
 
@@ -3371,7 +3396,7 @@ so to undo custom designing of centration comment icon section above */
 }
 
 .mp__category .category__discr {
-  bottom: 20px;
+  bottom: 16px;
   top: auto;
   font-size: 16px;
   line-height: 1.25;
@@ -3440,11 +3465,12 @@ so to undo custom designing of centration comment icon section above */
 }
 
 .popular-instr__heading {
+  padding-bottom: 28px;
   margin-bottom: 49px;
 }
 
 .popular-instr__list {
-  margin-bottom: 39px;
+  margin-bottom: 22px;
   padding: 0;
   list-style: none;
 }
@@ -3459,6 +3485,10 @@ so to undo custom designing of centration comment icon section above */
 
 .popular-instr__btn-container {
   text-align: center;
+}
+
+.popular-instr__btn-container .mp__btn {
+  padding: 14px 31px 15px;
 }
 
 .popular-instr .instruction {
@@ -3588,6 +3618,16 @@ so to undo custom designing of centration comment icon section above */
   height: 30px;
 }
 
+.mp__cons .icon-light-bulb {
+  width: 32px;
+  height: 32px;
+}
+
+.mp__cons .icon-dollar {
+  width: 27px;
+  height: 27px;
+}
+
 .icon-container {
   display: flex;
   align-items: center;
@@ -3597,6 +3637,12 @@ so to undo custom designing of centration comment icon section above */
   position: absolute;
   left: 0;
   top: 0;
+}
+
+@media (max-width: 767px) {
+  .mp__cons .icon-container {
+    left: 10px;
+  }
 }
 
 .icon-search {
@@ -3626,12 +3672,22 @@ so to undo custom designing of centration comment icon section above */
 .icon-exit {
   margin: 0 5px;
   fill: rgba(0, 0, 0, 0.7);
+  width: 14px;
 }
 
 @media (max-width: 767px) {
   .icon-exit + .icon-text {
     font-size: 0;
   }
+}
+
+.icon-hamburger {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .icon-arrow {
@@ -3650,6 +3706,8 @@ so to undo custom designing of centration comment icon section above */
 
 .icon-light-bulb {
   fill: rgba(0, 0, 0, 0.5);
+  height: 32px;
+  width: 32px;
 }
 
 .icon-rocket {
@@ -3662,4 +3720,120 @@ so to undo custom designing of centration comment icon section above */
 
 .icon-paper-airplane {
   fill: rgba(0, 0, 0, 0.67);
+}
+
+.mp__footer {
+  background-color: #f2f2f2;
+  padding-top: 31px;
+  padding-bottom: 20px;
+}
+
+.mp__footer-search-label {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.mp__footer-search-label .icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.mp__footer-search-label .icon-search {
+  width: 12px;
+  height: 12px;
+  fill: #3f36ff;
+}
+
+.mp__footer-search-input {
+  width: 270px;
+  padding-left: 30px;
+  padding-right: 5px;
+  height: 40px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  border: solid 1px #dddddd;
+  font-weight: normal;
+}
+
+.mp__footer-search-input::placeholder {
+  color: rgba(36, 36, 36, 0.5);
+}
+
+.mp__footer-search-input:focus {
+  border-color: #3f36ff;
+}
+
+.mp__footer-links {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: -25px;
+}
+
+.mp__footer-links > ul {
+  margin: 0;
+  padding: 0;
+  margin-left: 62px;
+}
+
+.mp__footer-links .social-heading {
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.33;
+  color: #404040;
+}
+
+.mp__footer-links .social__item {
+  color: #404040;
+  font-family: 'Open sans', serif;
+  line-height: 1.93;
+}
+
+.mp__footer-links .social__item:active {
+  opacity: 0.85;
+}
+
+.mp__footer-links .social__icon {
+  padding-left: 21px;
+  position: relative;
+}
+
+.mp__footer-links .social__icon:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: transparent url("../img/mp__sprite.jpg") 0 -480px no-repeat;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.mp__footer-links .icon--fb:after {
+  background-position-x: -60px;
+}
+
+.mp__footer-links .icon--fb:after {
+  background-position-x: -60px;
+}
+
+.mp__footer-links .icon--ytb:after {
+  background-position-x: -15px;
+}
+
+.mp__footer-links .icon--tw:after {
+  background-position-x: -30px;
+}
+
+.mp__footer-links .icon--pint:after {
+  background-position-x: -45px;
+}
+
+.mp__footer-links .icon--ggl:after {
+  background-position-x: 0;
 }

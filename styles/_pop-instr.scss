@@ -2,11 +2,12 @@
 .popular-instr {
   padding-bottom: 135px;
   &__heading {
+    padding-bottom: 28px;
     margin-bottom: 49px;
   }
 
   &__list {
-    margin-bottom: 39px;
+    margin-bottom: 22px;
     padding: 0;
     list-style: none;
   }
@@ -21,6 +22,11 @@
 
   &__btn-container {
     text-align: center;
+
+
+    & .mp__btn {
+      padding: 14px 31px 15px;
+    }
   }
 
   .instruction {

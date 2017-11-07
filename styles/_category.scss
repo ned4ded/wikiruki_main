@@ -1,15 +1,18 @@
 @import 'variables';
 
 .mp__category {
-  padding-top: 73px;
-  padding-bottom: 55px;
+  padding-top: 68px;
+  padding-bottom: 38px;
 
   .category {
-    $link-padding: 20px;
+    $link-padding-t: 14px;
+    $link-padding-b: 16px;
+    $link-padding-l: 20px;
+    $link-padding: $link-padding-t $link-padding-l $link-padding-b;
     $item-border-radius: 6px;
 
     &__heading {
-      margin-bottom: 70px;
+      margin-bottom: 50px;
     }
 
     &__list {
@@ -68,8 +71,8 @@
       position: absolute;
       font-family: 'Open Sans', serif;
       color: $main-background-color;
-      top: $link-padding;
-      left: $link-padding;
+      top: $link-padding-t;
+      left: $link-padding-l;
     }
 
     &__name {
@@ -79,7 +82,7 @@
     }
 
     &__discr {
-      bottom: $link-padding;
+      bottom: $link-padding-b;
       top: auto;
       font-size: 16px;
       line-height: 1.25;
@@ -93,7 +96,7 @@
       height: 100%;
       background: dimgrey url(mp__sprite.jpg) 0 0 no-repeat;
       z-index: -1;
-      
+
       &--sport {
         background-position: 0 0;
       }

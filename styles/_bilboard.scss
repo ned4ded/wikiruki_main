@@ -12,6 +12,7 @@
     z-index: -1;
     top: 0;
 
+    // Would work only with slick
     &-dots {
       position: absolute;
       left: 50%;
@@ -30,6 +31,10 @@
         background-color:$main-background-color;
         margin: 0;
         border: none;
+
+        &:focus {
+          outline: none;
+        }
       }
 
       & > li:not(last-of-type) {
@@ -40,20 +45,21 @@
   }
 
   &__info {
-    padding-top: 178px;
+    padding-top: 176px;
 
     &-heading {
       font-size: 24px;
       font-family: 'Open Sans', serif;
       font-weight: 600;
-      line-height: 1;
+      line-height: 1.06;
       text-align: left;
       color: $main-background-color;
-      width: 612px;
+      max-width: 612px;
       margin: 0;
 
       &-big {
         font-size: 140px;
+        letter-spacing: 0.037em;
       }
     }
 
@@ -64,13 +70,23 @@
       line-height: 1.5;
       text-align: left;
       color: $main-background-color;
-      width: 415px;
-      hyphen: auto;
+      max-width: 415px;
       // max height with not ruining slider's usability is 108px (4 rows) on max viewport
       max-height: 54px;
       overflow: hidden;
       margin: 0;
-      margin-top: 8px;
+      margin-top: 4px;
+    }
+  }
+
+  @media (max-width: 769px) {
+    &__info {
+      &-heading {
+        &-big {
+          line-height: 1;
+          font-size: 18vw;
+        }
+      }
     }
   }
 }

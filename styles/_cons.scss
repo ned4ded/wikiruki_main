@@ -1,10 +1,10 @@
 .mp__cons {
   background-color: $semi-bg-color-6;;
-  padding-top: 84px;
+  padding-top: 79px;
   padding-bottom: 69px;
 
   &-heading {
-    margin-bottom:75px;
+    margin-bottom:80px;
     padding: 0;
 
     &:after {
@@ -15,7 +15,7 @@
   &-list {
     padding: 0;
     margin-top: 0;
-    margin-bottom: 70px;
+    margin-bottom: 55px;
   }
 
   &-item {
@@ -37,7 +37,7 @@
     &-heading {
       font-family: 'Open Sans', serif;
       margin: 0;
-      margin-bottom: 18px;
+      margin-bottom: 15px;
       font-size: 18px;
       font-weight: 600;
       line-height: 1;
@@ -62,5 +62,9 @@
 
   &-btn-container {
     text-align: center;
+
+    & .mp__btn {
+      padding: 14px 25px 15px;
+    }
   }
 }

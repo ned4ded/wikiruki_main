@@ -6,7 +6,7 @@ $('document').ready(function(){
     dotsClass: 'bilboard__slider-dots',
     appendDots: $('.bilboard'),
     infinite: false,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000
   })
 });

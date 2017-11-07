@@ -1,3 +1,4 @@
+@import 'variables';
 
 .header {
   background-color: white;
@@ -83,15 +84,28 @@
     border-radius: 0;
     padding: 27px;
     padding-right: 30px;
+    margin-top: 10px;
   }
 
   .dropdown-menu > li > a {
     padding: 0;
     font-weight: 600;
+    font-size: 14px;
+    color: $h2-95-color;
+
+    &:hover {
+      background-color: transparent;
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: $main-highlight-color;
+    }
+
   }
 
   .dropdown-menu > li:not(:last-of-type) > a {
-    margin-bottom: 27px;
+    margin-bottom: 17px;
   }
 
   @media (max-width: 1199px) {
@@ -135,7 +149,7 @@
 
   & .mp__btn {
     align-self: center;
-    margin-left: 47px;
+    margin-left: 44px;
   }
 
   @media (max-width: 1199px) {
