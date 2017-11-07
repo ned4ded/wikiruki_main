@@ -3199,14 +3199,37 @@ so to undo custom designing of centration comment icon section above */
   display: block;
   width: 70px;
   height: 2px;
-  opacity: 0.6;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.6);
   margin: 0;
   border: none;
+  padding: 0;
+  position: relative;
+  border-left: 70px solid white;
 }
 
 .bilboard__slider-dots > li > button:focus {
   outline: none;
+}
+
+.bilboard__slider-dots li.slick-active ~ li > button {
+  border-left: none;
+}
+
+@keyframes slick-active {
+  0% {
+    border-left-width: 0;
+  }
+
+  100% {
+    border-left-width: 70px;
+  }
+}
+
+.bilboard__slider-dots li.slick-active > button {
+  border-left-width: 70px;
+  animation-name: slick-active;
+  animation-duration: 4s;
+  animation-timing-function: linear;
 }
 
 .bilboard__slider-dots > li:not(last-of-type) {

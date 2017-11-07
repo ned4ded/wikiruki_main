@@ -27,14 +27,32 @@
         display: block;
         width: 70px;
         height: 2px;
-        opacity: 0.6;
-        background-color:$main-background-color;
+        background-color: rgba(256, 256, 256, 0.6);
         margin: 0;
         border: none;
+        padding: 0;
+        position: relative;
+        border-left: 70px solid white;
 
         &:focus {
           outline: none;
         }
+      }
+
+      li.slick-active ~ li > button {
+        border-left: none;
+      }
+
+      @keyframes slick-active {
+        0% {border-left-width: 0;}
+        100% {border-left-width: 70px;}
+      }
+
+      li.slick-active > button {
+        border-left-width: 70px;
+        animation-name: slick-active;
+        animation-duration: 4s;
+        animation-timing-function: linear;
       }
 
       & > li:not(last-of-type) {
