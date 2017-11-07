@@ -3675,6 +3675,12 @@ so to undo custom designing of centration comment icon section above */
   width: 14px;
 }
 
+@media (max-width: 1199px) {
+  .icon-exit {
+    width: 20px;
+  }
+}
+
 @media (max-width: 767px) {
   .icon-exit + .icon-text {
     font-size: 0;
@@ -3769,12 +3775,14 @@ so to undo custom designing of centration comment icon section above */
 .mp__footer-links {
   display: flex;
   justify-content: flex-end;
-  margin-right: -25px;
 }
 
 .mp__footer-links > ul {
   margin: 0;
   padding: 0;
+}
+
+.mp__footer-links > ul:not(:first-of-type) {
   margin-left: 62px;
 }
 
@@ -3836,4 +3844,11 @@ so to undo custom designing of centration comment icon section above */
 
 .mp__footer-links .icon--ggl:after {
   background-position-x: 0;
+}
+
+@media (max-width: 1199px) {
+  .mp__footer-links {
+    margin-top: 20px;
+    justify-content: flex-start;
+  }
 }

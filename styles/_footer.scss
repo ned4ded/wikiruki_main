@@ -46,12 +46,14 @@
   &-links  {
     display: flex;
     justify-content: flex-end;
-    margin-right: -25px;
 
     & > ul {
       margin: 0;
       padding: 0;
-      margin-left: 62px;
+
+      &:not(:first-of-type) {
+        margin-left: 62px;
+      }
     }
 
     & .social {
@@ -120,4 +122,10 @@
     }
   }
 
+  @media(min-width: 1199px) {
+    &-links {
+      margin-top: 20px;
+      justify-content: flex-start;
+    }
+  }
 }
