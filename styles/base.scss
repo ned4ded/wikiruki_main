@@ -1,139 +1,20 @@
+// This styles will work with next libs:
+//
+// Jquery 3.2.1
+// Bootstrap 3.3.7
+// Slick-carousel 1.8.1
+//
+// Also you have to link custom landing css styles.
+//
+// Do not forget to link Bootstrap.css and Slick.css BEFORE linking custom styles.
+
 @import 'variables';
 
-.logo {
-  display: inline-block;
-  height: 100%;
-  padding: 0;
-}
+// Bootstrap reassignment styles
+@import 'bootfix';
+// End of reessigning bootstrap styles
 
-.mp {
-  min-width: 450px;
-
-  .footer__logo {
-    margin-bottom: 27px;
-  }
-
-  .navbar-toggle::after {
-  	display: none;
-  }
-}
-
-.mp__heading-2 {
-  font-size: 36px;
-  font-family: 'Open Sans', serif;
-  line-height: 1;
-  text-align: center;
-  color: $h2-color;
-  margin: 0;
-  padding-bottom: 26px;
-  position: relative;
-  text-align: center;
-
-
-  &:after {
-    content: '';
-    display: block;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    width: 100px;
-    height: 3px;
-    background-color: $main-highlight-color;
-    position: absolute;
-  }
-}
-
-.mp__btn {
-  display: inline-block;
-  padding: 12px 14px 12px;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 14px;
-  font-family: 'Open Sans', sans-serif;
-  background-color: $main-highlight-color;
-  background-color: #3f36ff;
-  border: 1px solid #3f36ff;
-  border-radius: 5px;
-  color: white;
-}
-
-.mp__btn {
-  &:focus {
-    color: white;
-    background-color: #3f36ff;
-    text-decoration: none;
-  }
-
-  &:hover, &:focus:hover {
-    color: #3f36ff;
-    text-decoration: none;
-    background-color: rgba(0, 0, 0, 0);
-  }
-
-  &:active,
-  &:hover:active {
-    color: white;
-    background-color: #0901df;
-  }
-}
-
-
-
-@media (min-width: 1200px) {
-  // anchor
-  .mp .container {
-    min-width: 1200px;
-  }
-}
-
-@media (max-width: 1199px) {
-    .navbar-header {
-        float: none;
-    }
-    .navbar-left,.navbar-right {
-        float: none !important;
-    }
-    .navbar-toggle {
-        display: block;
-    }
-    .navbar-collapse {
-        border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-    }
-    .navbar-fixed-top {
-        top: 0;
-        border-width: 0 0 1px;
-    }
-    .navbar-collapse.collapse {
-        display: none!important;
-    }
-    .navbar-nav {
-        float: none!important;
-        margin-top: 7.5px;
-    }
-    .navbar-nav>li {
-        float: none;
-    }
-    .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .collapse.in{
-        display:block !important;
-    }
-
-    .navbar-nav .open .dropdown-menu {
-      position: static;
-      float: none;
-      width: auto;
-      margin-top: 0;
-      background-color: transparent;
-      border: 0;
-      -webkit-box-shadow: none;
-      box-shadow: none;
-    }
-}
-
+// All custom styles. Prefix "c" for custom.
 .c-round {
   position: relative;
 
@@ -176,12 +57,107 @@
   }
 }
 
-@import 'landing';
+// Main Page (mp) custom styles
+.mp {
+  min-width: 450px;
+
+  .logo {
+    display: inline-block;
+    height: 100%;
+    padding: 0;
+
+    &__footer {
+      margin-bottom: 27px;
+    }
+  }
+
+  &__heading-2 {
+    font-size: 36px;
+    font-family: 'Open Sans', serif;
+    line-height: 1;
+    text-align: center;
+    color: $h2-color;
+    margin: 0;
+    padding-bottom: 26px;
+    position: relative;
+    text-align: center;
+
+
+    &:after {
+      content: '';
+      display: block;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      width: 100px;
+      height: 3px;
+      background-color: $main-highlight-color;
+      position: absolute;
+    }
+  }
+
+  &__btn {
+    display: inline-block;
+    padding: 12px 14px 12px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    font-family: 'Open Sans', sans-serif;
+    background-color: $main-highlight-color;
+    background-color: #3f36ff;
+    border: 1px solid #3f36ff;
+    border-radius: 5px;
+    color: white;
+
+    &:focus {
+      color: white;
+      background-color: #3f36ff;
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:focus:hover {
+      color: #3f36ff;
+      text-decoration: none;
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+    &:active,
+    &:hover:active {
+      color: white;
+      background-color: #0901df;
+    }
+  }
+}
+
+// Begin of Main Page header styles
 @import 'header';
+// End of Main Page header styles
+
+// Begin of Main Page dashboard styles
 @import 'dashboard';
+// End of Main Page dashboard styles
+
+// Begin of Main Page bilboard styles
 @import 'bilboard';
-@import 'cons';
+// End of Main Page bilboard styles
+
+// Begin of Main Page pros styles
+@import 'pros';
+// End of Main Page pros styles
+
+// Begin of Main Page categories styles
 @import 'category';
+// End of Main Page categories styles
+
+// Begin of Main Page popular instructions styles
 @import 'pop-instr';
-@import 'icons';
+// End of Main Page popular instructions styles
+
+// Begin of Main Page footer styles
 @import 'footer';
+// End of Main Page footer styles
+
+// Begin of Main Page icons styles
+@import 'icons';
+// End of Main Page icons styles

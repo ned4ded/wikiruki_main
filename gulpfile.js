@@ -2,28 +2,41 @@ const gulp = require('gulp');
 // Include plugins
 
 // JS plugins
-const uglify = require('gulp-uglify');
+  //Minify JS
+  const uglify = require('gulp-uglify');
 
 // CSS Plugins
-const sass = require('gulp-sass');
-const cleanCss = require('gulp-clean-css');
-const csscomb = require('gulp-csscomb');
-const postcss = require('gulp-postcss');
+  // Sass preprocessor
+  const sass = require('gulp-sass');
+  // Minify CSS
+  const cleanCss = require('gulp-clean-css');
+  // Beautify CSS styles
+  const csscomb = require('gulp-csscomb');
+  // Scss concat files with @import func
+  const importResolve = require('import-resolve');
+  // Replace url(..path/) in CSS
+  const urlAdjust = require('gulp-css-url-adjuster');
   // Postcss Plugins
-  const autoprefixer = require('autoprefixer');
-  const mqpacker = require('css-mqpacker');
+  const postcss = require('gulp-postcss');
+    // Set prefixes using CanIUse base
+    const autoprefixer = require('autoprefixer');
+    
 
 // Common Plugins
-const concat = require('gulp-concat');
-const rename = require('gulp-rename');
-const urlAdjust = require('gulp-css-url-adjuster');
+  // Concat several files in one
+  const concat = require('gulp-concat');
+  // Rename file
+  const rename = require('gulp-rename');
+  // Add Main bower.json files in project falder
+  const mainBowerFiles = require('main-bower-files');
+
 
 // Webserver plugins
 const browserSync = require('browser-sync').create();
-const mainBowerFiles = require('main-bower-files');
 // End of including plugins
 
 // Inititialization tasks
+
 gulp.task('main-bower-files', function() {
   gulp.src(mainBowerFiles('**/*.js'))
     .pipe(uglify())
@@ -62,7 +75,7 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('styles', function() {
-  return gulp.src(__dirname + '/styles/*.scss')
+  return gulp.src(__dirname + '/styles/base.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(urlAdjust({
       prepend: '../img/',
@@ -79,8 +92,13 @@ gulp.task('scripts', function() {
   .pipe(browserSync.stream());
 })
 
-//Default
+//Default, runing webserver
 gulp.task('default', ['webserver']);
 
 //Task on first time start
-gulp.task('init', ['main-bower-files', 'styles'])
+gulp.task('init', ['main-bower-files', 'styles']);
+
+//Archiving file in one ZIP
+gulp.task('archive', function() {
+
+});
