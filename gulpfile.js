@@ -20,7 +20,7 @@ const gulp = require('gulp');
   const postcss = require('gulp-postcss');
     // Set prefixes using CanIUse base
     const autoprefixer = require('autoprefixer');
-    
+
 
 // Common Plugins
   // Concat several files in one
@@ -29,14 +29,75 @@ const gulp = require('gulp');
   const rename = require('gulp-rename');
   // Add Main bower.json files in project falder
   const mainBowerFiles = require('main-bower-files');
+  // Source map generator
+  // const sourcemaps = require('gulp-sourcemaps');
 
 
 // Webserver plugins
 const browserSync = require('browser-sync').create();
 // End of including plugins
 
-// Inititialization tasks
+// Infrastructure
+  // Pipeline constructors
+    // Applyes passed array of functions to a gulp.src method
+    // or gulp.src.pipe(...) pipeline sequence
+    const pipeCons = (pipeline, array) => array.reduce((sum, current) => {
+      return sum.pipe(current);
+    }, pipeline);
 
+    // Basic sass compilation tasks + constructor
+    const sassPipeCons = (path, dest, isWebserver = true, funcArray = undefined) => {
+    if(path == undefined) {
+      console.log('ERROR! sassPipe: Path parameter should be defined');
+      return;
+    }
+
+    const commonPipe = () => gulp.src(__dirname + path)
+      .pipe(sass().on('error', sass.logError))
+      .pipe(rename('custom.css'))
+      .pipe(urlAdjust({
+        prepend: '../img/',
+      }));
+
+    const wholePipe = () => {
+      const assemblePipe = () => {
+        if(!funcArray) {
+          return commonPipe().pipe(gulp.dest(dest));
+        } else {
+          return pipeCons(commonPipe(), funcArray).pipe(gulp.dest(dest));
+        }
+      };
+
+      return (isWebserver) ? assemblePipe()
+                              .pipe(browserSync.stream()) :
+                             assemblePipe();
+    };
+
+    return wholePipe();
+  };
+
+    // Concatinate less, sass, styl files into one base file, using infile import func
+    const concatImportCss = (path, dest, ext = 'scss') => {
+      if(path == undefined || dest == undefined) {
+        console.log('ERROR! concatImportCss: Do not has enough parameters');
+        return;
+      }
+
+      return importResolve({
+        'ext': ext,
+        'pathToMain': path,
+        'output': dest
+      });
+    };
+
+  // Functions' arrays
+  const postCssPipe = [
+    postcss([
+      autoprefixer()
+    ])
+  ];
+
+// Inititialization tasks
 gulp.task('main-bower-files', function() {
   gulp.src(mainBowerFiles('**/*.js'))
     .pipe(uglify())
@@ -75,14 +136,8 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('styles', function() {
-  return gulp.src(__dirname + '/styles/base.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(urlAdjust({
-      prepend: '../img/',
-    }))
-    .pipe(rename('custom.css'))
-    .pipe(gulp.dest('app/css'))
-    .pipe(browserSync.stream());
+  return sassPipeCons('/styles/base.scss', 'app/css');
+  //
 });
 
 gulp.task('scripts', function() {
@@ -99,6 +154,9 @@ gulp.task('default', ['webserver']);
 gulp.task('init', ['main-bower-files', 'styles']);
 
 //Archiving file in one ZIP
-gulp.task('archive', function() {
 
+gulp.task('archive', function() {
+  concatImportCss('styles/base.scss', 'project/styles/custom.scss');
+  sassPipeCons('/styles/base.scss', 'project/styles', true, postCssPipe);
+  return;
 });
