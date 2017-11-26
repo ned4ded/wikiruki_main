@@ -1,3 +1,4 @@
+const fs = require('fs');
 const gulp = require('gulp');
 // Include plugins
 
@@ -18,7 +19,11 @@ const gulp = require('gulp');
   const urlAdjust = require('gulp-css-url-adjuster');
   // Postcss Plugins
   const postcss = require('gulp-postcss');
+    // Postcss-SCSS provides interface to use the other postcss Plugins
+    // With .scss files
+    // const syntax = require('postcss-scss');
     // Set prefixes using CanIUse base
+    // const cssImport = require('postcss-easy-import')
     const autoprefixer = require('autoprefixer');
 
 
@@ -41,39 +46,39 @@ const browserSync = require('browser-sync').create();
   // Pipeline constructors
     // Applyes passed array of functions to a gulp.src method
     // or gulp.src.pipe(...) pipeline sequence
-    const pipeCons = (pipeline, array) => array.reduce((sum, current) => {
-      return sum.pipe(current);
+    const pipeCons = (pipeline, array) => array.reduce((acc, current) => {
+      return acc.pipe(current);
     }, pipeline);
 
     // Basic sass compilation tasks + constructor
     const sassPipeCons = (path, dest, isWebserver = true, funcArray = undefined) => {
-    if(path == undefined) {
-      console.log('ERROR! sassPipe: Path parameter should be defined');
-      return;
-    }
+      if(path == undefined) {
+        console.log('ERROR! sassPipe: Path parameter should be defined');
+        return;
+      }
 
-    const commonPipe = () => gulp.src(__dirname + path)
-      .pipe(sass().on('error', sass.logError))
-      .pipe(rename('custom.css'))
-      .pipe(urlAdjust({
-        prepend: '../img/',
-      }));
+      const commonPipe = () => gulp.src(__dirname + path)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(rename('custom.css'))
+        .pipe(urlAdjust({
+          prepend: '../img/',
+        }));
 
-    const wholePipe = () => {
-      const assemblePipe = () => {
-        if(!funcArray) {
-          return commonPipe().pipe(gulp.dest(dest));
-        } else {
-          return pipeCons(commonPipe(), funcArray).pipe(gulp.dest(dest));
-        }
+      const wholePipe = () => {
+        const assemblePipe = () => {
+          if(!funcArray) {
+            return commonPipe().pipe(gulp.dest(dest));
+          } else {
+            return pipeCons(commonPipe(), funcArray).pipe(gulp.dest(dest));
+          }
+        };
+
+        return (isWebserver) ? assemblePipe()
+                                .pipe(browserSync.stream()) :
+                               assemblePipe();
       };
 
-      return (isWebserver) ? assemblePipe()
-                              .pipe(browserSync.stream()) :
-                             assemblePipe();
-    };
-
-    return wholePipe();
+      return wholePipe();
   };
 
     // Concatinate less, sass, styl files into one base file, using infile import func
@@ -83,21 +88,24 @@ const browserSync = require('browser-sync').create();
         return;
       }
 
-      return importResolve({
-        'ext': ext,
-        'pathToMain': path,
-        'output': dest
-      });
-    };
+       importResolve({
+          'ext': ext,
+          'pathToMain': path,
+          'output': dest
+        });
+      };
 
   // Functions' arrays
   const postCssPipe = [
     postcss([
-      autoprefixer()
+      autoprefixer({
+        browsers: [
+          'last 2 versions'
+        ]
+      })
     ])
   ];
 
-// Inititialization tasks
 gulp.task('main-bower-files', function() {
   gulp.src(mainBowerFiles('**/*.js'))
     .pipe(uglify())
@@ -151,12 +159,63 @@ gulp.task('scripts', function() {
 gulp.task('default', ['webserver']);
 
 //Task on first time start
-gulp.task('init', ['main-bower-files', 'styles']);
+gulp.task('init', function() {
+  const htmlFolder = 'html';
+  const projectStructure = {
+    folders: [
+      'app',
+      'app/css',
+      'app/js',
+      'app/img',
+      htmlFolder,
+      'js',
+      'styles',
+      'img',
+      'sources',
+    ],
+    files: [
+      'html/index.html',
+      'styles/base.scss',
+    ]
+  }
+  const htmlContent = `<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+  <body>
+
+  </body>
+  </html>`;
+
+  // projectStructure.folders.map(path => fs.mkdirSync(path));
+  // projectStructure.files.map(name => fs.writeFileSync(name, ''));
+
+  // gulp.start('main-bower-files');
+  // gulp.start('styles');
+
+  return fs.readdirSync(htmlFolder).map(file => fs.writeFileSync(`${htmlFolder}/${file}`, htmlContent));
+});
 
 //Archiving file in one ZIP
-
 gulp.task('archive', function() {
+
   concatImportCss('styles/base.scss', 'project/styles/custom.scss');
-  sassPipeCons('/styles/base.scss', 'project/styles', true, postCssPipe);
+
+  gulp.src('project/styles/custom.scss')
+    .pipe(postcss([
+      autoprefixer({
+        browsers: ['last 2 versions']
+      })
+    ], {
+      syntax: require('postcss-scss')
+    }
+  ))
+  .pipe(gulp.dest('project/styles'));
+
+  // sassPipeCons('/styles/base.scss', 'project/styles', false, postCssPipe);
   return;
 });
