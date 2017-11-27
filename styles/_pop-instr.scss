@@ -114,8 +114,20 @@
       font-size: 12px;
     }
 
+    &__icons {
+      display:flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
     &__icon {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
       margin-left: 14px;
+      padding: 0;
 
       &:first-of-type {
         margin: 0;
@@ -133,6 +145,15 @@
         font-size: 12px;
         font-weight: bold;
         color: rgba(17, 17, 17, 0.8);
+      }
+
+      span {
+        display: block;
+        line-height: 100%;
+      }
+
+      .icon {
+        margin-right: 7px;
       }
     }
 
